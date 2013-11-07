@@ -1,0 +1,70 @@
+# RDF dataset for GS case study.
+
+@prefix : <http://purl.org/see/gsexample#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdo: <http://purl.org/see/rdo#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+
+
+### propositions as named graphs
+
+:proposition-1 { :gs_enzyme-1 rdf:type :gs_enzyme ,
+                      owl:NamedIndividual ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :isolated_from ;
+                        owl:someValuesFrom :rat_liver
+                      ] }
+
+:proposition-3 { :sample-1 rdf:type [ rdf:type owl:Restriction ;
+                                         owl:onProperty :bears ;
+                                         owl:someValuesFrom :gs_activity
+                                       ] }
+
+:proposition-4 { :gs-activity rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :has_bearer ;
+                                                   owl:someValuesFrom :gs_enzyme
+                                                 ] }
+
+:proposition-5 { :sample-1 rdf:type [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isolated_from ;
+                                         owl:someValuesFrom :rat_liver
+                                       ] }
+
+:proposition-15 { :sample-1 :is_output_of :TLM_purification }
+
+:proposition-16 { :TLM-purification :has_input :sample-2 }
+
+:proposition-17 { :sample-2 rdf:type :rat_liver_sample }
+
+:proposition-18 { :rat_liver_sample rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :isolated_from ;
+                                                         owl:someValuesFrom :rat_liver
+                                                       ] }
+
+:proposition-6 { :sample-1 :is_input_of :assay-1 }
+
+:proposition-7 { :assay-1 :has_output :data_item-1 }
+
+:proposition-8 { :data_item-1 rdf:type [ rdf:type owl:Restriction ;
+                                             owl:onProperty :measurement_of ;
+                                             owl:someValuesFrom :gs_activity
+                                           ] }
+
+:proposition-9 { :data_item-1 :is_output_of :assay-1 }
+
+:proposition-10 { :assay-1 rdf:type :gamma_ghs_assay }
+
+:proposition-11 { :gamma_ghs_assay rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :achieves_objective ;
+                                                        owl:someValuesFrom :gs_activity_measurement_objective
+                                                      ] }
+
+:proposition-12 { :gs_activity_measurement_objective owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :is_objective_to_measure ;
+                                                                              owl:someValuesFrom :gs_activity
+                                                                            ] }

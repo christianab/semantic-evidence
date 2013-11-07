@@ -1,0 +1,2665 @@
+# RDF dataset for GS case study.
+
+@prefix : <http://purl.org/see/gsexample#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdo: <http://purl.org/see/rdo#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+
+# default graph
+{
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://purl.org/see/gsexample#achieves_objective
+
+<http://purl.org/see/gsexample#achieves_objective> rdfs:label "achieves objective"@en .
+
+
+
+###  http://purl.org/see/gsexample#bears
+
+<http://purl.org/see/gsexample#bears> rdf:type owl:ObjectProperty ;
+                                      
+                                      rdfs:label "bears"@en ;
+                                      
+                                      rdfs:comment "A material entity A bears a quality B."@en ;
+                                      
+                                      owl:inverseOf <http://purl.org/see/gsexample#has_bearer> .
+
+
+
+###  http://purl.org/see/gsexample#has_bearer
+
+<http://purl.org/see/gsexample#has_bearer> rdf:type owl:ObjectProperty ;
+                                           
+                                           rdfs:label "has bearer"@en ;
+                                           
+                                           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://purl.org/see/gsexample#has_input
+
+<http://purl.org/see/gsexample#has_input> rdf:type owl:ObjectProperty ;
+                                          
+                                          rdfs:label "has input"@en .
+
+
+
+###  http://purl.org/see/gsexample#has_output
+
+<http://purl.org/see/gsexample#has_output> rdf:type owl:ObjectProperty ;
+                                           
+                                           rdfs:label "has output"@en .
+
+
+
+###  http://purl.org/see/gsexample#is_input_of
+
+<http://purl.org/see/gsexample#is_input_of> rdf:type owl:ObjectProperty ;
+                                            
+                                            rdfs:label "is input of"@en ;
+                                            
+                                            owl:inverseOf <http://purl.org/see/gsexample#has_input> .
+
+
+
+###  http://purl.org/see/gsexample#is_objective_to_measure
+
+<http://purl.org/see/gsexample#is_objective_to_measure> rdf:type owl:ObjectProperty ;
+                                                        
+                                                        rdfs:label "is objective to measure"@en ;
+                                                        
+                                                        rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://purl.org/see/gsexample#is_output_of
+
+<http://purl.org/see/gsexample#is_output_of> rdf:type owl:ObjectProperty ;
+                                             
+                                             rdfs:label "is output of"@en ;
+                                             
+                                             owl:inverseOf <http://purl.org/see/gsexample#has_output> .
+
+
+
+###  http://purl.org/see/gsexample#isolated_from
+
+<http://purl.org/see/gsexample#isolated_from> rdfs:label "isolated from"@en ;
+                                              
+                                              rdfs:comment "A material entity A is isolated from a material entity B iff B was a source of A."@en .
+
+
+
+###  http://purl.org/see/gsexample#measurement_of
+
+<http://purl.org/see/gsexample#measurement_of> rdfs:label "measurement of"@en .
+
+
+
+###  http://purl.org/see/gsexample#realizes
+
+<http://purl.org/see/gsexample#realizes> rdfs:label "realizes"@en .
+
+
+
+###  http://purl.org/see/rdo#asserts
+
+<http://purl.org/see/rdo#asserts> rdfs:comment "The object property rdo:asserts relates an assertion to what is asserted i.e. to the proposition which is put forward as being true or an agent to a proposition put forward as being true by the agent or a report to a proposition put forward as being true in that report."@en ,
+                                               "alternative labels: claims, posits, presents as true"@en .
+
+
+
+###  http://purl.org/see/rdo#bears
+
+<http://purl.org/see/rdo#bears> rdf:type owl:ObjectProperty ;
+                                
+                                rdfs:comment "The object property rdo:bears relates a bearer of a role to the role borne."@en ;
+                                
+                                owl:inverseOf <http://purl.org/see/rdo#has_bearer> .
+
+
+
+###  http://purl.org/see/rdo#expresses_proposition
+
+<http://purl.org/see/rdo#expresses_proposition> rdf:type owl:ObjectProperty ;
+                                                
+                                                rdfs:comment "The object property rdo:expresses_proposition relates a text to a proposition expressed in the text."@en ;
+                                                
+                                                rdfs:range <http://purl.org/see/rdo#proposition> ;
+                                                
+                                                rdfs:domain <http://purl.org/see/rdo#text> .
+
+
+
+###  http://purl.org/see/rdo#has_author
+
+<http://purl.org/see/rdo#has_author> rdf:type owl:ObjectProperty ;
+                                     
+                                     rdfs:comment "The object property rdo:has_author relates a report or part of a report to an agent having an author role for the report."@en ;
+                                     
+                                     owl:inverseOf <http://purl.org/see/rdo#is_author_of> .
+
+
+
+###  http://purl.org/see/rdo#has_bearer
+
+<http://purl.org/see/rdo#has_bearer> rdf:type owl:ObjectProperty ;
+                                     
+                                     rdfs:comment "The object property rdo:has_bearer relates a role to its bearer."@en .
+
+
+
+###  http://purl.org/see/rdo#has_conclusion
+
+<http://purl.org/see/rdo#has_conclusion> rdf:type owl:ObjectProperty ;
+                                         
+                                         rdfs:comment "The object property: rdo:has_conclusion relates an argument to an assertion iff the latter is a conclusion in that argument."@en ;
+                                         
+                                         rdfs:domain <http://purl.org/see/rdo#argument> ;
+                                         
+                                         rdfs:range <http://purl.org/see/rdo#assertion> ;
+                                         
+                                         owl:inverseOf <http://purl.org/see/rdo#is_conclusion_of> ;
+                                         
+                                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://purl.org/see/rdo#has_conjunctive_part
+
+<http://purl.org/see/rdo#has_conjunctive_part> rdf:type owl:ObjectProperty ;
+                                               
+                                               rdfs:range <http://purl.org/see/rdo#assertion> ;
+                                               
+                                               rdfs:domain <http://purl.org/see/rdo#assertion> ;
+                                               
+                                               owl:inverseOf <http://purl.org/see/rdo#is_conjunctive_part_of> .
+
+
+
+###  http://purl.org/see/rdo#has_lexical_part
+
+<http://purl.org/see/rdo#has_lexical_part> rdf:type owl:ObjectProperty ;
+                                           
+                                           rdfs:comment "The object property rdo:has_lexical_part relates a report to a text which is part of the entire narrative in which the report is expressed."@en ;
+                                           
+                                           rdfs:domain <http://purl.org/see/rdo#report> ;
+                                           
+                                           rdfs:range <http://purl.org/see/rdo#text> .
+
+
+
+###  http://purl.org/see/rdo#has_part
+
+<http://purl.org/see/rdo#has_part> rdf:type owl:ObjectProperty .
+
+
+
+###  http://purl.org/see/rdo#has_premise
+
+<http://purl.org/see/rdo#has_premise> rdf:type owl:ObjectProperty ;
+                                      
+                                      rdfs:comment "The object property: rdo:has_premise relates an argument to an assertion iff the latter is a premise in that argument."@en ;
+                                      
+                                      rdfs:domain <http://purl.org/see/rdo#argument> ;
+                                      
+                                      rdfs:range <http://purl.org/see/rdo#assertion> .
+
+
+
+###  http://purl.org/see/rdo#is_agent_asserting
+
+<http://purl.org/see/rdo#is_agent_asserting> rdf:type owl:ObjectProperty ;
+                                             
+                                             rdfs:comment "The object property rdo:is_agent_asserting relates an agent T to a proposition P iff T puts forward P as true. This is the case iff there is an assertion A so that T 'makes assertion' A and A 'is assertion asserting' P."@en ;
+                                             
+                                             rdfs:domain <http://purl.org/see/rdo#agent> ;
+                                             
+                                             rdfs:subPropertyOf <http://purl.org/see/rdo#asserts> ;
+                                             
+                                             rdfs:range <http://purl.org/see/rdo#proposition> .
+
+
+
+###  http://purl.org/see/rdo#is_asserted_by
+
+<http://purl.org/see/rdo#is_asserted_by> rdf:type owl:ObjectProperty ;
+                                         
+                                         rdfs:comment "The object property rdo:is_asserted_by relates a proposition to an agent iff that proposition is asserted by the agent."@en ;
+                                         
+                                         rdfs:range <http://purl.org/see/rdo#agent> ;
+                                         
+                                         owl:inverseOf <http://purl.org/see/rdo#is_agent_asserting> ;
+                                         
+                                         rdfs:domain <http://purl.org/see/rdo#proposition> ;
+                                         
+                                         owl:propertyChainAxiom ( <http://purl.org/see/rdo#is_asserted_in_assertion>
+                                                                  <http://purl.org/see/rdo#is_assertion_made_by>
+                                                                ) ;
+                                         
+                                         rdfs:subPropertyOf [ owl:inverseOf <http://purl.org/see/rdo#asserts>
+                                                            ] .
+[ rdf:type owl:Axiom ;
+  rdfs:comment "This property chain is used to infer that a proposition asserted in an assertion which is an assertion made by an agent is asserted by that agent."@en ;
+  owl:annotatedSource <http://purl.org/see/rdo#is_asserted_by> ;
+  owl:annotatedProperty owl:propertyChainAxiom ;
+  owl:annotatedTarget ( <http://purl.org/see/rdo#is_asserted_in_assertion>
+                        <http://purl.org/see/rdo#is_assertion_made_by>
+                      )
+] .
+
+
+
+###  http://purl.org/see/rdo#is_asserted_in
+
+<http://purl.org/see/rdo#is_asserted_in> rdfs:comment "The object property rdo:is_asserted_in relates a proposition to an assertion or a report in which it is asserted."@en .
+
+
+
+###  http://purl.org/see/rdo#is_asserted_in_assertion
+
+<http://purl.org/see/rdo#is_asserted_in_assertion> rdf:type owl:ObjectProperty ;
+                                                   
+                                                   rdfs:comment "The object property rdo:is_asserted_in_assertion relates a proposition to an assertion. The relation between proposition P and assertion A obtains iff P is asserted in A."@en ;
+                                                   
+                                                   rdfs:range <http://purl.org/see/rdo#assertion> ;
+                                                   
+                                                   rdfs:subPropertyOf <http://purl.org/see/rdo#is_asserted_in> ;
+                                                   
+                                                   rdfs:domain <http://purl.org/see/rdo#proposition> ;
+                                                   
+                                                   rdfs:subPropertyOf [ owl:inverseOf <http://purl.org/see/rdo#asserts>
+                                                                      ] .
+
+
+
+###  http://purl.org/see/rdo#is_asserted_in_report
+
+<http://purl.org/see/rdo#is_asserted_in_report> rdf:type owl:ObjectProperty ;
+                                                
+                                                rdfs:comment "The object property rdo:is_asserted_in_report relates a proposition P to a report R iff P is asserted in R."@en ;
+                                                
+                                                rdfs:subPropertyOf <http://purl.org/see/rdo#is_asserted_in> ;
+                                                
+                                                rdfs:domain <http://purl.org/see/rdo#proposition> ;
+                                                
+                                                rdfs:range <http://purl.org/see/rdo#report_part> ;
+                                                
+                                                rdfs:subPropertyOf [ owl:inverseOf <http://purl.org/see/rdo#asserts>
+                                                                   ] .
+
+
+
+###  http://purl.org/see/rdo#is_assertion_asserting
+
+<http://purl.org/see/rdo#is_assertion_asserting> rdf:type owl:ObjectProperty ;
+                                                 
+                                                 rdfs:domain <http://purl.org/see/rdo#assertion> ;
+                                                 
+                                                 rdfs:subPropertyOf <http://purl.org/see/rdo#asserts> ;
+                                                 
+                                                 owl:inverseOf <http://purl.org/see/rdo#is_asserted_in_assertion> ;
+                                                 
+                                                 rdfs:range <http://purl.org/see/rdo#proposition> ;
+                                                 
+                                                 rdfs:subPropertyOf [ owl:inverseOf <http://purl.org/see/rdo#is_asserted_in>
+                                                                    ] .
+
+
+
+###  http://purl.org/see/rdo#is_assertion_based_on
+
+<http://purl.org/see/rdo#is_assertion_based_on> rdf:type owl:ObjectProperty ;
+                                                
+                                                rdfs:comment """The object property rdo:is_assertion_based_on relates an assertion to a text or a report. The relation obtains between assertion A and an entity E if  A 'is assertion based on text' E or if assertion A 'is assertion based on report' E.
+
+The relation allows to subsume all texts and reports on which, directly or indirectly, an assertion is based."""@en ;
+                                                
+                                                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://purl.org/see/rdo#is_assertion_based_on_report
+
+<http://purl.org/see/rdo#is_assertion_based_on_report> rdf:type owl:ObjectProperty ;
+                                                       
+                                                       rdfs:comment """The object property rdo:is_assertion_based_on_report relates an assertion to a report. This relation obtains between assertion A and report R iff A 'is assertion made in' R or A 'is inferred from' assertion A* and A* 'is assertion made in' R.
+
+The relation allows to subsume all reports on which, directly or indirectly, an assertion is based."""@en ;
+                                                       
+                                                       rdfs:domain <http://purl.org/see/rdo#assertion> ;
+                                                       
+                                                       rdfs:subPropertyOf <http://purl.org/see/rdo#is_assertion_based_on> ;
+                                                       
+                                                       rdfs:range <http://purl.org/see/rdo#report_part> ;
+                                                       
+                                                       owl:propertyChainAxiom ( <http://purl.org/see/rdo#is_inferred_from>
+                                                                                <http://purl.org/see/rdo#is_assertion_made_in>
+                                                                              ) .
+[ rdf:type owl:Axiom ;
+  rdfs:comment """This property chain is used to infer that if assertion A 'is inferred from' assertion A* and A* 'is assertion made in' report R then A 'is assertion based on report' R.
+
+This property chain enables subsuming all reports on which an assertion is based directly or indirectly."""@en ;
+  owl:annotatedSource <http://purl.org/see/rdo#is_assertion_based_on_report> ;
+  owl:annotatedProperty owl:propertyChainAxiom ;
+  owl:annotatedTarget ( <http://purl.org/see/rdo#is_inferred_from>
+                        <http://purl.org/see/rdo#is_assertion_made_in>
+                      )
+] .
+
+
+
+###  http://purl.org/see/rdo#is_assertion_based_on_text
+
+<http://purl.org/see/rdo#is_assertion_based_on_text> rdf:type owl:ObjectProperty ;
+                                                     
+                                                     rdfs:comment """The object property rdo:is_assertion_based_on_text relates an assertion to a text. This relation obtains between assertion A and text T iff A 'is assertion expressed as' T or A 'is inferred from' A* and A* 'is assertion expressed as' T.
+
+The relation allows to infer all texts on which, directly or indirectly, an assertion is based."""@en ;
+                                                     
+                                                     rdfs:domain <http://purl.org/see/rdo#assertion> ;
+                                                     
+                                                     rdfs:subPropertyOf <http://purl.org/see/rdo#is_assertion_based_on> ;
+                                                     
+                                                     rdfs:range <http://purl.org/see/rdo#text> ;
+                                                     
+                                                     owl:propertyChainAxiom ( <http://purl.org/see/rdo#is_inferred_from>
+                                                                              <http://purl.org/see/rdo#is_assertion_expressed_in>
+                                                                            ) .
+[ rdf:type owl:Axiom ;
+  rdfs:comment """This property chain is used to infer that if assertion A 'is inferred from' assertion A* and A* 'is assertion expressed in' text T then A 'is assertion based on text' T.
+
+This property chain enables subsuming all text on which an assertion is based directly or indirectly."""@en ;
+  owl:annotatedSource <http://purl.org/see/rdo#is_assertion_based_on_text> ;
+  owl:annotatedProperty owl:propertyChainAxiom ;
+  owl:annotatedTarget ( <http://purl.org/see/rdo#is_inferred_from>
+                        <http://purl.org/see/rdo#is_assertion_expressed_in>
+                      )
+] .
+
+
+
+###  http://purl.org/see/rdo#is_assertion_expressed_in
+
+<http://purl.org/see/rdo#is_assertion_expressed_in> rdf:type owl:ObjectProperty ;
+                                                    
+                                                    rdfs:comment """The object property rdo:is_assertion_expressed_in relates an assertion to a text. This relation obtains between assertion A and text T iff there exists a report part R so that A 'is assertion made in' R and R 'is expressed as' T.
+
+This relation enables linking assertions to texts without explicitly creating report parts as entities of their own."""@en ;
+                                                    
+                                                    rdfs:domain <http://purl.org/see/rdo#assertion> ;
+                                                    
+                                                    rdfs:range <http://purl.org/see/rdo#text> .
+
+
+
+###  http://purl.org/see/rdo#is_assertion_made_by
+
+<http://purl.org/see/rdo#is_assertion_made_by> rdf:type owl:ObjectProperty ;
+                                               
+                                               rdfs:comment "The object property rdo:is_assertion_made_by relates an assertion to an agent making the assertion."@en ;
+                                               
+                                               rdfs:range <http://purl.org/see/rdo#agent> ;
+                                               
+                                               rdfs:domain <http://purl.org/see/rdo#assertion> ;
+                                               
+                                               owl:inverseOf <http://purl.org/see/rdo#makes_assertion> ;
+                                               
+                                               owl:propertyChainAxiom ( <http://purl.org/see/rdo#is_conjunctive_part_of>
+                                                                        <http://purl.org/see/rdo#is_assertion_made_by>
+                                                                      ) ,
+                                                                      ( <http://purl.org/see/rdo#is_assertion_made_in>
+                                                                        <http://purl.org/see/rdo#has_author>
+                                                                      ) .
+[ rdf:type owl:Axiom ;
+  rdfs:comment "An assertion made in some report will be inferred to be made by any of the authors."@en ;
+  owl:annotatedSource <http://purl.org/see/rdo#is_assertion_made_by> ;
+  owl:annotatedProperty owl:propertyChainAxiom ;
+  owl:annotatedTarget ( <http://purl.org/see/rdo#is_assertion_made_in>
+                        <http://purl.org/see/rdo#has_author>
+                      )
+] .
+
+
+
+###  http://purl.org/see/rdo#is_assertion_made_in
+
+<http://purl.org/see/rdo#is_assertion_made_in> rdf:type owl:ObjectProperty ;
+                                               
+                                               rdfs:comment """The object property rdo:is_assertion_made_in relates an assertion to a report or part of a report iff that assertion is made in that report / in that part of a report.
+
+Note that any assertion related to a report by this property will be inferred to be made by any of the authors of the report."""@en ;
+                                               
+                                               rdfs:domain <http://purl.org/see/rdo#assertion> ;
+                                               
+                                               rdfs:range <http://purl.org/see/rdo#report_part> ;
+                                               
+                                               owl:propertyChainAxiom ( <http://purl.org/see/rdo#is_conjunctive_part_of>
+                                                                        <http://purl.org/see/rdo#is_assertion_made_in>
+                                                                      ) ,
+                                                                      ( <http://purl.org/see/rdo#is_assertion_expressed_in>
+                                                                        <http://purl.org/see/rdo#is_lexical_part_of>
+                                                                      ) ,
+                                                                      ( <http://purl.org/see/rdo#is_assertion_made_in>
+                                                                        <http://purl.org/see/rdo#is_expressed_as>
+                                                                        <http://purl.org/see/rdo#is_lexical_part_of>
+                                                                      ) .
+[ rdf:type owl:Axiom ;
+  rdfs:comment """An assertion expressed in some patch of text that is part of the lexical representation of a report is inferred to be made in the report.
+
+This property chain bypasses the need to create report parts as entities of their own when an assertion is related to a patch of text and a report."""@en ;
+  owl:annotatedSource <http://purl.org/see/rdo#is_assertion_made_in> ;
+  owl:annotatedProperty owl:propertyChainAxiom ;
+  owl:annotatedTarget ( <http://purl.org/see/rdo#is_assertion_expressed_in>
+                        <http://purl.org/see/rdo#is_lexical_part_of>
+                      )
+] .
+[ rdf:type owl:Axiom ;
+  rdfs:comment "This property chain is used to infer that an assertion made in a report part which is expressed as a patch of text which is a lexical part of a report is made in the report."@en ;
+  owl:annotatedSource <http://purl.org/see/rdo#is_assertion_made_in> ;
+  owl:annotatedProperty owl:propertyChainAxiom ;
+  owl:annotatedTarget ( <http://purl.org/see/rdo#is_assertion_made_in>
+                        <http://purl.org/see/rdo#is_expressed_as>
+                        <http://purl.org/see/rdo#is_lexical_part_of>
+                      )
+] .
+
+
+
+###  http://purl.org/see/rdo#is_author_of
+
+<http://purl.org/see/rdo#is_author_of> rdf:type owl:ObjectProperty ;
+                                       
+                                       rdfs:comment "The object property rdo:is_author_of relates an agent to a report or a part of a report of which the agent is an author."@en ;
+                                       
+                                       owl:propertyChainAxiom ( <http://purl.org/see/rdo#is_author_of>
+                                                                <http://purl.org/see/rdo#is_part_of>
+                                                              ) .
+[ rdf:type owl:Axiom ;
+  rdfs:comment "This property chain is used to infer that an author of a part of a report is also author of the entire report."@en ;
+  owl:annotatedSource <http://purl.org/see/rdo#is_author_of> ;
+  owl:annotatedProperty owl:propertyChainAxiom ;
+  owl:annotatedTarget ( <http://purl.org/see/rdo#is_author_of>
+                        <http://purl.org/see/rdo#is_part_of>
+                      )
+] .
+
+
+
+###  http://purl.org/see/rdo#is_conclusion_of
+
+<http://purl.org/see/rdo#is_conclusion_of> rdf:type owl:ObjectProperty ;
+                                           
+                                           rdfs:comment "The object property: rdo:is_conclusion_of relates an assertion to an argument iff the former is a conclusion in that argument."@en ;
+                                           
+                                           rdfs:range <http://purl.org/see/rdo#argument> ;
+                                           
+                                           rdfs:domain <http://purl.org/see/rdo#assertion> .
+
+
+
+###  http://purl.org/see/rdo#is_conjunctive_part_of
+
+<http://purl.org/see/rdo#is_conjunctive_part_of> rdf:type owl:ObjectProperty ;
+                                                 
+                                                 rdfs:comment "The object property rdo:is_conjunctive_part_of relates an assertion that is a premise in an argument to the assertion encompassing of the entire set of premises in that argument"@en .
+
+
+
+###  http://purl.org/see/rdo#is_directly_inferred_from
+
+<http://purl.org/see/rdo#is_directly_inferred_from> rdf:type owl:ObjectProperty ;
+                                                    
+                                                    rdfs:comment "The object property rdo:is_directly_inferred_from relates an assertion to another assertion iff the the truth of what is asserted in the former (the conclusion) is inferred from the truth of what is asserted in the latter (the premises). Put differently, if the truth of the premises alleges to give reason to believe the conclusion is true. The relation obtains whenever an agent performs a corresponding act of inference."@en ;
+                                                    
+                                                    rdfs:range <http://purl.org/see/rdo#assertion> ;
+                                                    
+                                                    rdfs:domain <http://purl.org/see/rdo#assertion> ;
+                                                    
+                                                    rdfs:subPropertyOf <http://purl.org/see/rdo#is_inferred_from> ;
+                                                    
+                                                    owl:propertyChainAxiom ( <http://purl.org/see/rdo#is_directly_inferred_from>
+                                                                             <http://purl.org/see/rdo#has_conjunctive_part>
+                                                                           ) .
+[ rdf:type owl:Axiom ;
+  rdfs:comment "This property chain is used to subsume all assertions including conjunctive parts of assertions from which a given assertion is direcctly inferred."@en ;
+  owl:annotatedSource <http://purl.org/see/rdo#is_directly_inferred_from> ;
+  owl:annotatedProperty owl:propertyChainAxiom ;
+  owl:annotatedTarget ( <http://purl.org/see/rdo#is_directly_inferred_from>
+                        <http://purl.org/see/rdo#has_conjunctive_part>
+                      )
+] .
+
+
+
+###  http://purl.org/see/rdo#is_expressed_as
+
+<http://purl.org/see/rdo#is_expressed_as> rdf:type owl:ObjectProperty ;
+                                          
+                                          rdfs:comment "The object property rdo:is_expressed_as relates a report or a part of a report to the text as which it is expressed."@en ;
+                                          
+                                          rdfs:domain <http://purl.org/see/rdo#report_part> ;
+                                          
+                                          rdfs:range <http://purl.org/see/rdo#text> .
+
+
+
+###  http://purl.org/see/rdo#is_expressed_in
+
+
+
+
+###  http://purl.org/see/rdo#is_inferred_from
+
+<http://purl.org/see/rdo#is_inferred_from> rdf:type owl:ObjectProperty ,
+                                                    owl:TransitiveProperty ;
+                                           
+                                           rdfs:comment """The object property rdo:is_inferred_from relates an assertion to another assertion iff the truth of what is asserted in the former is concluded, directly or indirectly, positing the truth of what is asserted in the latter.
+
+This relation is, in contrast to its sub-property rdo:is_directly_inferred_from transitive and allows to construct inference trees, whereas rdo:is_directly_inferred_from is intended for representation of individual acts of inference as part of a specific narrative in a scientifc report."""@en ;
+                                           
+                                           rdfs:domain <http://purl.org/see/rdo#assertion> ;
+                                           
+                                           rdfs:range <http://purl.org/see/rdo#assertion> .
+
+
+
+###  http://purl.org/see/rdo#is_lexical_part_of
+
+<http://purl.org/see/rdo#is_lexical_part_of> rdf:type owl:ObjectProperty ;
+                                             
+                                             rdfs:comment "The object property rdo:is_lexical_part_of relates patches of text which are part of the entire narrative in which a report is expressed to the report."@en ;
+                                             
+                                             owl:inverseOf <http://purl.org/see/rdo#has_lexical_part> ;
+                                             
+                                             rdfs:range <http://purl.org/see/rdo#report_part> ;
+                                             
+                                             rdfs:domain <http://purl.org/see/rdo#text> .
+
+
+
+###  http://purl.org/see/rdo#is_part_of
+
+<http://purl.org/see/rdo#is_part_of> rdf:type owl:ObjectProperty ;
+                                     
+                                     owl:inverseOf <http://purl.org/see/rdo#has_part> .
+
+
+
+###  http://purl.org/see/rdo#is_premise_of
+
+<http://purl.org/see/rdo#is_premise_of> rdf:type owl:ObjectProperty ;
+                                        
+                                        rdfs:comment "The object property: rdo:is_premise_of relates an assertion to an argument iff the former is a premise in that argument."@en ;
+                                        
+                                        owl:inverseOf <http://purl.org/see/rdo#has_premise> .
+
+
+
+###  http://purl.org/see/rdo#is_proposition_expressed_in
+
+<http://purl.org/see/rdo#is_proposition_expressed_in> rdf:type owl:ObjectProperty ;
+                                                      
+                                                      owl:inverseOf <http://purl.org/see/rdo#expresses_proposition> ;
+                                                      
+                                                      rdfs:domain <http://purl.org/see/rdo#proposition> ;
+                                                      
+                                                      rdfs:range <http://purl.org/see/rdo#text> .
+
+
+
+###  http://purl.org/see/rdo#is_realized_in
+
+<http://purl.org/see/rdo#is_realized_in> rdf:type owl:ObjectProperty ;
+                                         
+                                         rdfs:comment "The object property rdo:is_realized_in relates premise, conclusion, agent and other roles to the processes in which these roles are realized."@en ;
+                                         
+                                         owl:inverseOf <http://purl.org/see/rdo#realizes> .
+
+
+
+###  http://purl.org/see/rdo#is_report_asserting
+
+<http://purl.org/see/rdo#is_report_asserting> rdf:type owl:ObjectProperty ;
+                                              
+                                              rdfs:comment "The object property rdo:is_report_asserting relates a report part R to a proposition P. The relation obtains iff R puts forward P as true."@en ;
+                                              
+                                              rdfs:subPropertyOf <http://purl.org/see/rdo#asserts> ;
+                                              
+                                              owl:inverseOf <http://purl.org/see/rdo#is_asserted_in_report> ;
+                                              
+                                              rdfs:range <http://purl.org/see/rdo#proposition> ;
+                                              
+                                              rdfs:domain <http://purl.org/see/rdo#report_part> ;
+                                              
+                                              rdfs:subPropertyOf [ owl:inverseOf <http://purl.org/see/rdo#is_asserted_in>
+                                                                 ] .
+
+
+
+###  http://purl.org/see/rdo#makes_assertion
+
+<http://purl.org/see/rdo#makes_assertion> rdf:type owl:ObjectProperty ;
+                                          
+                                          rdfs:comment "The object property rdo:makes_assertion relates an agent to an assertion made by the agent or a report or a part of a report to an assertion made in it."@en .
+
+
+
+###  http://purl.org/see/rdo#realizes
+
+<http://purl.org/see/rdo#realizes> rdf:type owl:ObjectProperty ;
+                                   
+                                   rdfs:comment "The object property rdo:realizes relates processes in which premise, conclusion or agent roles are realized to such roles."@en .
+
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+
+owl:topObjectProperty rdf:type owl:SymmetricProperty ,
+                               owl:TransitiveProperty ;
+                      
+                      owl:inverseOf owl:topObjectProperty .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://purl.org/see/rdo#has_lexical_structure
+
+<http://purl.org/see/rdo#has_lexical_structure> rdfs:label "has lexical structure"@en ;
+                                                
+                                                rdfs:comment "The data property rdo:has_lexical_structure relates a resource to a lexical structure i.e. a string value. In the RDO approach it is used to indicate what instances of rdo:text actually are."@en .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://purl.org/see/gsexample#assay
+
+<http://purl.org/see/gsexample#assay> rdf:type owl:Class .
+
+
+
+###  http://purl.org/see/gsexample#data_item
+
+<http://purl.org/see/gsexample#data_item> rdfs:label "data item"@en .
+
+
+
+###  http://purl.org/see/gsexample#gamma_ghs_assay
+
+<http://purl.org/see/gsexample#gamma_ghs_assay> rdf:type owl:Class ;
+                                                
+                                                rdfs:label "gammaGHS assay"@en ;
+                                                
+                                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty <http://purl.org/see/gsexample#realizes> ;
+                                                                      owl:someValuesFrom <http://purl.org/see/gsexample#gamma_ghs_assay_protocol>
+                                                                    ] ;
+                                                
+                                                rdfs:subClassOf <http://purl.org/see/gsexample#assay> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://purl.org/see/gsexample#achieves_objective> ;
+                                                                  owl:someValuesFrom <http://purl.org/see/gsexample#gs_activity_measurement_objective>
+                                                                ] .
+
+
+
+###  http://purl.org/see/gsexample#gamma_ghs_assay_protocol
+
+<http://purl.org/see/gsexample#gamma_ghs_assay_protocol> rdfs:label "gamma-GHS assay protocol"@en .
+
+
+
+###  http://purl.org/see/gsexample#gs_activity
+
+<http://purl.org/see/gsexample#gs_activity> rdf:type owl:Class ;
+                                            
+                                            rdfs:label "GS-activity"@en ;
+                                            
+                                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <http://purl.org/see/gsexample#has_bearer> ;
+                                                              owl:someValuesFrom <http://purl.org/see/gsexample#gs_enzyme>
+                                                            ] ;
+                                            
+                                            rdfs:comment "The quality of having GS activity i.e. a disposition to catalyze a glutamine synthetase reaction."@en .
+
+
+
+###  http://purl.org/see/gsexample#gs_activity_measurement_objective
+
+<http://purl.org/see/gsexample#gs_activity_measurement_objective> rdf:type owl:Class ;
+                                                                  
+                                                                  rdfs:label "GS-activity measurement objective"@en ;
+                                                                  
+                                                                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                                        owl:onProperty <http://purl.org/see/gsexample#is_objective_to_measure> ;
+                                                                                        owl:someValuesFrom <http://purl.org/see/gsexample#gs_activity>
+                                                                                      ] .
+
+
+
+###  http://purl.org/see/gsexample#gs_enzyme
+
+<http://purl.org/see/gsexample#gs_enzyme> rdfs:label "GS-enzyme"@en .
+
+
+
+###  http://purl.org/see/gsexample#protein_purification_objective
+
+<http://purl.org/see/gsexample#protein_purification_objective> rdfs:comment "protein purification objective"@en .
+
+
+
+###  http://purl.org/see/gsexample#rat_liver
+
+<http://purl.org/see/gsexample#rat_liver> rdfs:label "rat liver"@en ;
+                                          
+                                          rdfs:comment "Rat livers."@en .
+
+
+
+###  http://purl.org/see/gsexample#rat_liver_sample
+
+<http://purl.org/see/gsexample#rat_liver_sample> rdf:type owl:Class ;
+                                                 
+                                                 rdfs:label "rat liver sample"@en ;
+                                                 
+                                                 owl:equivalentClass [ rdf:type owl:Class ;
+                                                                       owl:intersectionOf ( <http://purl.org/see/gsexample#sample>
+                                                                                            [ rdf:type owl:Restriction ;
+                                                                                              owl:onProperty <http://purl.org/see/gsexample#isolated_from> ;
+                                                                                              owl:someValuesFrom <http://purl.org/see/gsexample#rat_liver>
+                                                                                            ]
+                                                                                          )
+                                                                     ] ;
+                                                 
+                                                 rdfs:subClassOf <http://purl.org/see/gsexample#sample> .
+
+
+
+###  http://purl.org/see/gsexample#sample
+
+<http://purl.org/see/gsexample#sample> rdf:type owl:Class .
+
+
+
+###  http://purl.org/see/rdo#act_of_assertion
+
+<http://purl.org/see/rdo#act_of_assertion> rdfs:label "act of assertion" ;
+                                           
+                                           rdfs:comment """The class rdo:act_of_assertion represents particular acts effected by particular agents on a particular occasion (e.g. as authors of a scientific article) of putting forward a particular proposition as true.
+
+Note that the term 'assertion' carries an ambiguity in that it can refer to the process of putting forward a proposition as true ('asserting') and it can refer to the resulting claim ('the assertion'). In RDO, the class act_of_assertion is used to represent the former and the class assertion is used to represent the latter. Understood in this way, the terms 'assertion' and 'claim' are interchangeable in many contexts in the representation of scientific reasoning which is why 'claim' is presented as an alternative label to the class rdo:assertion."""@en .
+
+
+
+###  http://purl.org/see/rdo#act_of_inference
+
+<http://purl.org/see/rdo#act_of_inference> rdf:type owl:Class ;
+                                           
+                                           rdfs:label "act of inference"@en ;
+                                           
+                                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.org/see/rdo#realizes> ;
+                                                             owl:someValuesFrom <http://purl.org/see/rdo#premise_role>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.org/see/rdo#realizes> ;
+                                                             owl:someValuesFrom <http://purl.org/see/rdo#agent_role>
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.org/see/rdo#realizes> ;
+                                                             owl:onClass <http://purl.org/see/rdo#conclusion_role> ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                                                           ] ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty <http://purl.org/see/rdo#has_part> ;
+                                                             owl:someValuesFrom <http://purl.org/see/rdo#act_of_assertion>
+                                                           ] ;
+                                           
+                                           rdfs:comment "The class rdo:act_of_inference represents processes of drawing a conclusion from a set of premises. Acts of inference include an act of assertion in which the proposition that is the conclusion is put forward as true on the basis of the asserted premises. "@en .
+
+
+
+###  http://purl.org/see/rdo#agent
+
+<http://purl.org/see/rdo#agent> rdf:type owl:Class ;
+                                
+                                rdfs:label "agent"@en ;
+                                
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://purl.org/see/rdo#bears> ;
+                                                      owl:someValuesFrom <http://purl.org/see/rdo#agent_role>
+                                                    ] ;
+                                
+                                rdfs:comment "Instances of rdo:agent represent individual persons, corporate bodies or information processing devices participating in the provision of data on a subject of inquiry."@en .
+
+
+
+###  http://purl.org/see/rdo#agent_role
+
+<http://purl.org/see/rdo#agent_role> rdfs:label "agent role"@en ;
+                                     
+                                     rdfs:comment "An rdo:agent_role is a role borne by an individual person, a corporate body or an information processing device by virtue of participating in the provision of data on a subject of inquiry."@en .
+
+
+
+###  http://purl.org/see/rdo#argument
+
+<http://purl.org/see/rdo#argument> rdf:type owl:Class ;
+                                   
+                                   rdfs:label "argument"^^xsd:string ;
+                                   
+                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://purl.org/see/rdo#has_conclusion> ;
+                                                     owl:someValuesFrom <http://purl.org/see/rdo#assertion>
+                                                   ] ;
+                                   
+                                   rdfs:comment """The class rdo:argument represents arguments i.e. a series of assertions, one of which is the conclusion, the rest of
+which are premises, such that the premises allege to provide ground or reason to believe the proposition put forward in the conclusion is true."""@en .
+
+
+
+###  http://purl.org/see/rdo#assertion
+
+<http://purl.org/see/rdo#assertion> rdf:type owl:Class ;
+                                    
+                                    rdfs:label "assertion"^^xsd:string ;
+                                    
+                                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://purl.org/see/rdo#is_assertion_asserting> ;
+                                                      owl:someValuesFrom <http://purl.org/see/rdo#proposition>
+                                                    ] ;
+                                    
+                                    rdfs:comment """The class rdo:assertion represents particular claims made by particular agents on a particular occasion (e.g. as authors of a scientific article) that a particular proposition is true.
+
+Note that the term 'assertion' carries an ambiguity in that it can refer to the process of putting forward a proposition as true ('asserting') and it can refer to the resulting claim ('the assertion'). In RDO, the class act_of_assertion is used to represent the former and the class assertion is used to represent the latter. Understood in this way, the terms 'assertion' and 'claim' are interchangeable in many contexts in the representation of scientific reasoning which is why 'claim' is presented as an alternative label to the class rdo:assertion."""@en ;
+                                    
+                                    rdfs:seeAlso "http://www.blackwellreference.com/public/tocnode?id=g9781405106795_chunk_g97814051067952_ss1-239" .
+
+
+
+###  http://purl.org/see/rdo#author_role
+
+<http://purl.org/see/rdo#author_role> rdf:type owl:Class ;
+                                      
+                                      rdfs:label "author role"@en ;
+                                      
+                                      rdfs:subClassOf <http://purl.org/see/rdo#agent_role> ;
+                                      
+                                      rdfs:comment "An rdo:author_role is an agent role borne by an agent that is an author of a report."@en .
+
+
+
+###  http://purl.org/see/rdo#conclusion_role
+
+<http://purl.org/see/rdo#conclusion_role> rdf:type owl:Class ;
+                                          
+                                          rdfs:label "conclusion role"@en ;
+                                          
+                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <http://purl.org/see/rdo#has_bearer> ;
+                                                            owl:someValuesFrom <http://purl.org/see/rdo#assertion>
+                                                          ] ;
+                                          
+                                          rdfs:comment "An rdo:conclusion_role is borne by an assertion iff that assertion is used as a conclusion in an argument." .
+
+
+
+###  http://purl.org/see/rdo#curator_role
+
+<http://purl.org/see/rdo#curator_role> rdf:type owl:Class ;
+                                       
+                                       rdfs:label "curator role"@en ;
+                                       
+                                       rdfs:subClassOf <http://purl.org/see/rdo#agent_role> ;
+                                       
+                                       rdfs:comment "An rdo:curator_role is an agent role borne by an agent iff that agent curates some information relevant to a subject of inquiry."@en .
+
+
+
+###  http://purl.org/see/rdo#person
+
+<http://purl.org/see/rdo#person> rdfs:label "person"@en ;
+                                 
+                                 rdfs:comment "The class rdo:person represents individual persons."@en .
+
+
+
+###  http://purl.org/see/rdo#premise_role
+
+<http://purl.org/see/rdo#premise_role> rdf:type owl:Class ;
+                                       
+                                       rdfs:label "premise role"@en ;
+                                       
+                                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                         owl:onProperty <http://purl.org/see/rdo#has_bearer> ;
+                                                         owl:someValuesFrom <http://purl.org/see/rdo#assertion>
+                                                       ] ;
+                                       
+                                       rdfs:comment "An rdo:premise_role is borne by an assertion iff that assertion is used as a premise in an argument." .
+
+
+
+###  http://purl.org/see/rdo#proposition
+
+<http://purl.org/see/rdo#proposition> rdfs:label "proposition"@en ;
+                                      
+                                      rdfs:comment """The class rdo:proposition represents propositions i.e. the sharable objects of propositional attitudes like belief or desire and the bearers of truth values. As truth bearers they are either true or false. They are taken to represent the semantic content of sentences or larger lexical entities formulated in some natural or artificial language.
+"""@en ;
+                                      
+                                      rdfs:seeAlso <http://plato.stanford.edu/entries/propositions/> .
+
+
+
+###  http://purl.org/see/rdo#report
+
+<http://purl.org/see/rdo#report> rdf:type owl:Class ;
+                                 
+                                 rdfs:label "report"@en ;
+                                 
+                                 rdfs:subClassOf <http://purl.org/see/rdo#report_part> ;
+                                 
+                                 rdfs:seeAlso "http://www.businessdictionary.com/definition/report.html" ,
+                                              "http://dictionary.reference.com/browse/report" ;
+                                 
+                                 rdfs:comment "The class rdo:report represents reports i.e accounts or statements intended to accurately describe in detail an event, situation, or the like, usually as the result of observation, inquiry, etc. and containing information organized in a narrative, graphic, or tabular form, prepared on ad hoc, periodic, recurring, regular, or as required basis. Reports may refer to specific periods, events, occurrences, or subjects, and may be communicated or presented in oral or written form."@en .
+
+
+
+###  http://purl.org/see/rdo#report_part
+
+<http://purl.org/see/rdo#report_part> rdf:type owl:Class ;
+                                      
+                                      rdfs:label "report part"@en ;
+                                      
+                                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <http://purl.org/see/rdo#is_part_of> ;
+                                                            owl:someValuesFrom <http://purl.org/see/rdo#report>
+                                                          ] ;
+                                      
+                                      rdfs:comment "A part of a report, i.e. any continuous or discontinuous part of the narrative. As such it may consist of or contain figures, tables, supplementary information or parts of it."@en .
+
+
+
+###  http://purl.org/see/rdo#text
+
+<http://purl.org/see/rdo#text> rdfs:label "text"@en ;
+                               
+                               rdfs:comment """The class rdo:text represents texts i.e. extended structures of syntactic units such as words, groups, and clauses and textual units that is marked by coherence among the elements and completion and formulated in some natural or artificial language.
+
+This definition is based on Werlich, E. A text grammar of English Heidelberg: Quelle & Meyer, 1983"""@en .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://purl.org/see/gsexample#Meister1985_part-1
+
+<http://purl.org/see/gsexample#Meister1985_part-1> rdf:type <http://purl.org/see/rdo#report_part> ,
+                                                            owl:NamedIndividual ;
+                                                   
+                                                   rdfs:label "Meister 1985 part 1" ;
+                                                   
+                                                   <http://purl.org/see/rdo#is_part_of> <http://purl.org/see/gsexample#meister_1985> ;
+                                                   
+                                                   <http://purl.org/see/rdo#is_expressed_as> <http://purl.org/see/gsexample#text-1> .
+
+
+
+###  http://purl.org/see/gsexample#TLM_purification
+
+<http://purl.org/see/gsexample#TLM_purification> rdf:type owl:NamedIndividual ,
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <http://purl.org/see/gsexample#achieves_objective> ;
+                                                            owl:someValuesFrom <http://purl.org/see/gsexample#protein_purification_objective>
+                                                          ] ;
+                                                 
+                                                 rdfs:label "TLM purification"@en ;
+                                                 
+                                                 rdfs:comment "The protein purification process performed by Tate et al."@en ;
+                                                 
+                                                 <http://purl.org/see/gsexample#has_output> <http://purl.org/see/gsexample#sample-1> ;
+                                                 
+                                                 <http://purl.org/see/gsexample#has_input> <http://purl.org/see/gsexample#sample-2> .
+
+
+
+###  http://purl.org/see/gsexample#alton_meister
+
+<http://purl.org/see/gsexample#alton_meister> rdf:type <http://purl.org/see/rdo#agent> ,
+                                                       <http://purl.org/see/rdo#person> ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "Alton Meister" ;
+                                              
+                                              <http://purl.org/see/rdo#makes_assertion> <http://purl.org/see/gsexample#assertion-1> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-10> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-11> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-12> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-15> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-16> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-17> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-18> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-19> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-2> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-20> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-3> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-4> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-5> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-6> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-7> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-8> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-9> ,
+                                                                                        <http://purl.org/see/gsexample#composite_assertion-1> ,
+                                                                                        <http://purl.org/see/gsexample#composite_assertion-2> ,
+                                                                                        <http://purl.org/see/gsexample#composite_assertion-3> ,
+                                                                                        <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                              
+                                              <http://purl.org/see/rdo#is_author_of> <http://purl.org/see/gsexample#meister_1985> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-1> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-1> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-10> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-10> ,
+                                                                                <http://purl.org/see/gsexample#proposition-11> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-11> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-12> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-12> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-15> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-15> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-16> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-16> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-17> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-17> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-18> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-18> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-19> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-19> ,
+                                                                                           <http://purl.org/see/gsexample#proposition-20> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-20> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-3> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-3> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-4> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-4> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-5> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-5> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-6> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-6> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-7> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-7> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-8> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-8> ;
+                                              
+                                              <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-9> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-9> ;
+                                              
+                                              <http://purl.org/see/rdo#is_author_of> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assay-1
+
+<http://purl.org/see/gsexample#assay-1> rdf:type <http://purl.org/see/gsexample#assay> ,
+                                                 <http://purl.org/see/gsexample#gamma_ghs_assay> ,
+                                                 owl:NamedIndividual ;
+                                        
+                                        rdfs:comment "One of the assays that Tate et al have performed"@en ;
+                                        
+                                        <http://purl.org/see/gsexample#has_output> <http://purl.org/see/gsexample#data_item-1> ;
+                                        
+                                        <http://purl.org/see/gsexample#has_input> <http://purl.org/see/gsexample#sample-1> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-1
+
+<http://purl.org/see/gsexample#assertion-1> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "! some GS-enzyme isolated from some rat liver ! AM" ;
+                                            
+                                            rdfs:comment """Actually the reasoning involved during text comprehension is more fine grained: At the literal level Meisters text contains sentences certain parts of which express, when combined, the proposition that the isolation of GS has been described from rat liver.
+(Isolation of GS has been described from rat liver)
+Used to infer:
+(GS was isolated from rat liver)
+Used to infer:
+(GS was located in rat liver)
+Used to infer:
+(GS is located(active) in all rat livers).
+
+Note that there are all sorts of semantic overloads: GS refers to a certain type of protein (chemical structure) wiith a certain type of catalytic activity).
+is located: physically present (part of), activity present (reaction is capable of carrying significant non-zero flux).
+
+At this point it is crucial that the object property assertion that this assertion !(GS isLocated RatLiver)!AM is part of the Meister_1985 report is asserted by another agent (the creator of the ontology for example). So it becomes clear that the assertion is the result of an interpretation of the Meister 1985 text by another agent.
+"""@en ,
+                                                         "Meisters assertion that GS is located in rat liver. This assertion asserts the proposition that GS is located in rat liver. This proposition is expressed in the text that expresses Alton Meisters report."@en ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#Meister1985_part-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-10> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-11> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-12> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-15> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-16> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-17> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-18> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-19> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-2> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-2> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-20> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-3> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-4> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-5> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-6> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-7> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-8> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-9> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-1> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-2> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-3> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#meister_1985> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on_report> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_expressed_in> <http://purl.org/see/gsexample#text-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on> <http://purl.org/see/gsexample#text-2> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on_text> <http://purl.org/see/gsexample#text-2> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-10
+
+<http://purl.org/see/gsexample#assertion-10> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! assay-1 Type gammaGHS assay !"@en ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-3> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-10> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-10> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-11
+
+<http://purl.org/see/gsexample#assertion-11> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! gammaGHS assay SubClassOf (achieves objective some GS-activity measurement objective) !"@en ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-3> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-11> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-11> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-12
+
+<http://purl.org/see/gsexample#assertion-12> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! GS-activity measurement objective SubClassOf (is objective to measure some GS-activity) !"@en ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-3> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-12> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-12> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-15
+
+<http://purl.org/see/gsexample#assertion-15> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! sample-1 is output of TLM purification !" ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-15> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-15> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-16
+
+<http://purl.org/see/gsexample#assertion-16> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! TLM purification has input sample-2 !"@en ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-16> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-16> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-17
+
+<http://purl.org/see/gsexample#assertion-17> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! sample-2 Type rat liver extract !" ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-17> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-17> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-18
+
+<http://purl.org/see/gsexample#assertion-18> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! rat liver extract SubClassOf (isolated from some rat liver) !" ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-18> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-18> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-19
+
+<http://purl.org/see/gsexample#assertion-19> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! TLM purification Type (achieves objective some protein purification objective) !" ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-19> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-19> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-2
+
+<http://purl.org/see/gsexample#assertion-2> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "! some GS-enzyme isolated from some rat liver ! ST FL AM" ;
+                                            
+                                            rdfs:comment "Interpretations of some... some... assertions: In assertions of the kind some A is_related_to some B it is basically asserted that there exists an x and x is an instance of both the classes A and the class (is_related_to B). If these instances cannot be named with an URI, one has to resort to blank nodes or \"skolemications\" i.e. somehow designed URIs to denote x as a resource. For the purpose of this proof of concept we will simply use our own URIs."@en ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-10> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-11> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-12> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-15> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-16> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-17> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-18> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-19> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-20> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-3> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-3> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-4> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-4> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-5> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-5> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-6> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-7> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-8> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-9> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#composite_assertion-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#composite_assertion-1> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-2> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-3> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-1> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on_report> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_expressed_in> <http://purl.org/see/gsexample#text-2> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-20
+
+<http://purl.org/see/gsexample#assertion-20> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! protein purification objective SubclassOf (is objective to purify some protein) !" ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-20> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-20> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-3
+
+<http://purl.org/see/gsexample#assertion-3> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "! sample-1 Type (bears some GS-activity) ! ST FL AM"@en ;
+                                            
+                                            rdfs:comment "Actually this assertion is inferred on the basis that the activity measured is significantly larger than 0 u/mg (would be intresting to know whether they applied some negative control for the assay)" ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-10> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-11> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-12> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-6> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-6> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-7> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-7> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-8> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-8> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-9> ;
+                                            
+                                            <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#composite_assertion-2> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#composite_assertion-2> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#composite_assertion-3> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-3> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-3> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on_report> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-30
+
+<http://purl.org/see/gsexample#assertion-30> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "! some GS-enzyme isolated from some rat liver ! CB" ;
+                                             
+                                             <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-10> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-11> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-12> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-15> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-16> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-17> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-18> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-19> ;
+                                             
+                                             <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-2> ;
+                                             
+                                             <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-2> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-20> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-3> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-4> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-5> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-6> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-7> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-8> ,
+                                                                                        <http://purl.org/see/gsexample#assertion-9> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#christian_boelling> ;
+                                             
+                                             <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#composite_assertion-1> ,
+                                                                                        <http://purl.org/see/gsexample#composite_assertion-2> ,
+                                                                                        <http://purl.org/see/gsexample#composite_assertion-3> ,
+                                                                                        <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-1> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-1> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_based_on_report> <http://purl.org/see/gsexample#tate_1972> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_based_on> <http://purl.org/see/gsexample#tate_1972> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_based_on_text> <http://purl.org/see/gsexample#text-2> ;
+                                             
+                                             <http://purl.org/see/rdo#is_assertion_based_on> <http://purl.org/see/gsexample#text-2> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-4
+
+<http://purl.org/see/gsexample#assertion-4> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "! GS-activity SubClassOf (has bearer some GS-enzyme) !" ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                            
+                                            <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-4> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-4> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-5
+
+<http://purl.org/see/gsexample#assertion-5> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "! sample-1 Type (isolated from some rat liver) !" ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-15> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-15> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-16> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-16> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-17> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-17> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-18> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-18> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-19> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-19> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-20> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-20> ;
+                                            
+                                            <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-5> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-5> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on_report> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-6
+
+<http://purl.org/see/gsexample#assertion-6> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "! sample-1 is input of assay-1 !" ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                            
+                                            <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-2> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-6> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-6> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-7
+
+<http://purl.org/see/gsexample#assertion-7> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "! assay-1 has output data item-1 !" ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                            
+                                            <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-2> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-7> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-7> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-8
+
+<http://purl.org/see/gsexample#assertion-8> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "! data-item-1 Type (measurement of some GS-activity) !" ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-10> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-10> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-11> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-11> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-12> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#assertion-12> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-9> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#assertion-9> ;
+                                            
+                                            <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-2> ;
+                                            
+                                            <http://purl.org/see/rdo#is_directly_inferred_from> <http://purl.org/see/gsexample#composite_assertion-3> ;
+                                            
+                                            <http://purl.org/see/rdo#is_inferred_from> <http://purl.org/see/gsexample#composite_assertion-3> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-8> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-8> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_based_on_report> <http://purl.org/see/gsexample#tate_1972> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#assertion-9
+
+<http://purl.org/see/gsexample#assertion-9> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "! data item-1 is output of assay-1 !" ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                            
+                                            <http://purl.org/see/rdo#is_conjunctive_part_of> <http://purl.org/see/gsexample#composite_assertion-3> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-9> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-9> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#suresh_tate> ;
+                                            
+                                            <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#christian_boelling
+
+<http://purl.org/see/gsexample#christian_boelling> rdf:type <http://purl.org/see/rdo#agent> ,
+                                                            <http://purl.org/see/rdo#person> ,
+                                                            owl:NamedIndividual ;
+                                                   
+                                                   rdfs:label "Christian Bölling" ;
+                                                   
+                                                   <http://purl.org/see/rdo#makes_assertion> <http://purl.org/see/gsexample#assertion-30> ;
+                                                   
+                                                   <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-1> ;
+                                                   
+                                                   <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-1> .
+
+
+
+###  http://purl.org/see/gsexample#composite_assertion-1
+
+<http://purl.org/see/gsexample#composite_assertion-1> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                               owl:NamedIndividual ;
+                                                      
+                                                      rdfs:label """! GS-activity SubClassOf (has bearer some GS-enzyme) ! AND
+! sample-1 Type (bears some GS-activity) ! AND
+! sample-1 Type (derived from some rat liver) !
+ST FL AM""" ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                                      
+                                                      <http://purl.org/see/rdo#has_conjunctive_part> <http://purl.org/see/gsexample#assertion-3> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-4> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-5> ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                                     <http://purl.org/see/gsexample#suresh_tate> ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#composite_assertion-2
+
+<http://purl.org/see/gsexample#composite_assertion-2> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                               owl:NamedIndividual ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                                      
+                                                      <http://purl.org/see/rdo#has_conjunctive_part> <http://purl.org/see/gsexample#assertion-6> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-7> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-8> ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                                     <http://purl.org/see/gsexample#suresh_tate> ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#composite_assertion-3
+
+<http://purl.org/see/gsexample#composite_assertion-3> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                               owl:NamedIndividual ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                                      
+                                                      <http://purl.org/see/rdo#has_conjunctive_part> <http://purl.org/see/gsexample#assertion-10> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-11> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-12> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-9> ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                                     <http://purl.org/see/gsexample#suresh_tate> ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#composite_assertion-4
+
+<http://purl.org/see/gsexample#composite_assertion-4> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                               owl:NamedIndividual ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                                      
+                                                      <http://purl.org/see/rdo#has_conjunctive_part> <http://purl.org/see/gsexample#assertion-15> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-16> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-17> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-18> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-19> ,
+                                                                                                     <http://purl.org/see/gsexample#assertion-20> ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                                     <http://purl.org/see/gsexample#suresh_tate> ;
+                                                      
+                                                      <http://purl.org/see/rdo#is_assertion_made_in> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#data_item-1
+
+<http://purl.org/see/gsexample#data_item-1> rdf:type <http://purl.org/see/gsexample#data_item> ,
+                                                     owl:NamedIndividual ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <http://purl.org/see/gsexample#measurement_of> ;
+                                                       owl:someValuesFrom <http://purl.org/see/gsexample#gs_activity>
+                                                     ] ;
+                                            
+                                            <http://purl.org/see/gsexample#is_output_of> <http://purl.org/see/gsexample#assay-1> .
+
+
+
+###  http://purl.org/see/gsexample#fang_yun_leu
+
+<http://purl.org/see/gsexample#fang_yun_leu> rdf:type <http://purl.org/see/rdo#agent> ,
+                                                      <http://purl.org/see/rdo#person> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "Fang-Yun Leu" ;
+                                             
+                                             <http://purl.org/see/rdo#makes_assertion> <http://purl.org/see/gsexample#assertion-10> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-11> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-12> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-15> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-16> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-17> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-18> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-19> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-2> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-20> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-3> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-4> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-5> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-6> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-7> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-8> ,
+                                                                                       <http://purl.org/see/gsexample#assertion-9> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-1> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-2> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-3> ,
+                                                                                       <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-1> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-1> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-10> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-10> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-11> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-11> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-12> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-12> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-15> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-15> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-16> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-16> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-17> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-17> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-18> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-18> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-19> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-19> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-20> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-20> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-3> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-3> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-4> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-4> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-5> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-5> ,
+                                                                               <http://purl.org/see/gsexample#proposition-6> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-6> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-7> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-7> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-8> ;
+                                             
+                                             <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-8> ,
+                                                                                          <http://purl.org/see/gsexample#proposition-9> ;
+                                             
+                                             <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-9> ;
+                                             
+                                             <http://purl.org/see/rdo#is_author_of> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#gs_enzyme-1
+
+<http://purl.org/see/gsexample#gs_enzyme-1> rdf:type <http://purl.org/see/gsexample#gs_enzyme> ,
+                                                     owl:NamedIndividual ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <http://purl.org/see/gsexample#isolated_from> ;
+                                                       owl:someValuesFrom <http://purl.org/see/gsexample#rat_liver>
+                                                     ] ;
+                                            
+                                            rdfs:comment "The glutamine synthetase enzyme isolated by Tate et al."@en .
+
+
+
+###  http://purl.org/see/gsexample#meister_1985
+
+<http://purl.org/see/gsexample#meister_1985> rdf:type <http://purl.org/see/rdo#report> ,
+                                                      <http://purl.org/see/rdo#report_part> ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "Meister 1985" ;
+                                             
+                                             rdfs:seeAlso "http://dx.doi.org/10.1016/S0076-6879(85)13030-2"^^xsd:anyURI ;
+                                             
+                                             <http://purl.org/see/rdo#has_part> <http://purl.org/see/gsexample#Meister1985_part-1> ;
+                                             
+                                             <http://purl.org/see/rdo#has_author> <http://purl.org/see/gsexample#alton_meister> ;
+                                             
+                                             <http://purl.org/see/rdo#has_lexical_part> <http://purl.org/see/gsexample#text-1> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-1
+
+<http://purl.org/see/gsexample#proposition-1> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "some GS-enzyme isolated from some rat liver" ;
+                                              
+                                              rdfs:comment """Actually the reasoning involved during text comprehension is more fine grained: At the literal level Meisters text contains sentences certain parts of which express, when combined, the proposition that the isolation of GS has been described from rat liver.
+(Isolation of GS has been described from rat liver)
+Used to infer:
+(GS was isolated from rat liver)
+Used to infer:
+(GS was located in some rat liver)
+Used to infer:
+(GS is located(active) in all rat livers).
+
+Note that there are all sorts of semantic overloads: GS refers to a certain type of protein (chemical structure) wiith a certain type of catalytic activity).
+is located: physically present (part of), activity present (reaction is capable of carrying significant non-zero flux).
+
+At this point it is crucial that the object property assertion that this assertion !(GS isLocated RatLiver)!AM is part of the Meister_1985 report is asserted by another agent (the creator of the ontology for example). So it becomes clear that the assertion is the result of an interpretation of the Meister 1985 text by another agent.
+"""@en ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-1> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-1> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-2> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-2> ,
+                                                                                                 <http://purl.org/see/gsexample#assertion-30> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-30> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#christian_boelling> ,
+                                                                                       <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                       <http://purl.org/see/gsexample#suresh_tate> ;
+                                              
+                                              <http://purl.org/see/rdo#is_proposition_expressed_in> <http://purl.org/see/gsexample#text-1> ,
+                                                                                                    <http://purl.org/see/gsexample#text-2> .
+[ rdf:type owl:Axiom ;
+  rdfs:comment """Actually the reasoning involved during text comprehension is more fine grained: At the literal level Meisters text contains sentences certain parts of which express, when combined, the proposition that the isolation of GS has been described from rat liver.
+(Isolation of GS has been described from rat liver)
+Used to infer:
+(GS was isolated from rat liver)
+Used to infer:
+(GS was located in rat liver)
+Used to infer:
+(GS is located(active) in all rat livers).
+
+Note that there are all sorts of semantic overloads: GS refers to a certain type of protein (chemical structure) wiith a certain type of catalytic activity).
+is located: physically present (part of), activity present (reaction is capable of carrying significant non-zero flux).
+
+At this point it is crucial that the object property assertion that this assertion !(GS isLocated RatLiver)!AM is part of the Meister_1985 report is asserted by another agent (the creator of the ontology for example). So it becomes clear that the assertion is the result of an interpretation of the Meister 1985 text by another agent.
+"""@en ;
+  owl:annotatedSource <http://purl.org/see/gsexample#proposition-1> ;
+  owl:annotatedTarget <http://purl.org/see/gsexample#text-1> ;
+  owl:annotatedProperty <http://purl.org/see/rdo#is_proposition_expressed_in>
+] .
+
+
+
+###  http://purl.org/see/gsexample#proposition-10
+
+<http://purl.org/see/gsexample#proposition-10> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "assay-1 Type gammaGHS assay"@en ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-10> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-10> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                        <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-11
+
+<http://purl.org/see/gsexample#proposition-11> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "gammaGHS assay SubClassOf (achieves objective some GS-activity measurement objective)" ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-11> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-11> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                        <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-12
+
+<http://purl.org/see/gsexample#proposition-12> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "GS-activity measurement objective SubClassOf (is objective to measure some GS-activity)"@en ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-12> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-12> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                        <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-15
+
+<http://purl.org/see/gsexample#proposition-15> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "sample-1 is output of TLM purification"@en ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-15> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-15> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                        <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-16
+
+<http://purl.org/see/gsexample#proposition-16> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "TLM purification has input sample-2"@en ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-16> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-16> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                        <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-17
+
+<http://purl.org/see/gsexample#proposition-17> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "sample-2 Type rat liver extract"@en ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-17> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-17> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                        <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-18
+
+<http://purl.org/see/gsexample#proposition-18> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "rat liver extract SubClassOf (isolated from some rat liver)"@en ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-18> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-18> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                        <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-19
+
+<http://purl.org/see/gsexample#proposition-19> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "TLM purification Type (achieves objective some protein purification objective)" ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-19> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-19> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                        <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-20
+
+<http://purl.org/see/gsexample#proposition-20> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "protein purification objective SubclassOf (is objective to purify some protein)" ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-20> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-20> ;
+                                               
+                                               <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                        <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-3
+
+<http://purl.org/see/gsexample#proposition-3> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "sample-1 Type (bears some GS-activity)"@en ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-3> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-3> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                       <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-4
+
+<http://purl.org/see/gsexample#proposition-4> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "GS-activity SubClassOf (has bearer some GS-enzyme)"@en ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-4> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-4> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                       <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-5
+
+<http://purl.org/see/gsexample#proposition-5> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "sample-1 Type (isolated from some rat liver)"@en ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-5> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-5> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                       <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-6
+
+<http://purl.org/see/gsexample#proposition-6> rdf:type <http://purl.org/see/rdo#assertion> ,
+                                                       <http://purl.org/see/rdo#proposition> ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "sample-1 is input of assay-1"@en ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-6> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-6> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#proposition-6> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#proposition-6> ;
+                                              
+                                              <http://purl.org/see/rdo#is_assertion_asserting> <http://purl.org/see/gsexample#proposition-6> ;
+                                              
+                                              <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-6> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-7
+
+<http://purl.org/see/gsexample#proposition-7> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "assay-1 has output data item-1"@en ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-7> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-7> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                       <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-8
+
+<http://purl.org/see/gsexample#proposition-8> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "data-item-1 Type (measurement of some GS-activity)"@en ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-8> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-8> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                       <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#proposition-9
+
+<http://purl.org/see/gsexample#proposition-9> rdf:type <http://purl.org/see/rdo#proposition> ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "data item-1 is output of assay-1"@en ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#alton_meister> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in> <http://purl.org/see/gsexample#assertion-9> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_in_assertion> <http://purl.org/see/gsexample#assertion-9> ;
+                                              
+                                              <http://purl.org/see/rdo#is_asserted_by> <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                                       <http://purl.org/see/gsexample#suresh_tate> .
+
+
+
+###  http://purl.org/see/gsexample#sample-1
+
+<http://purl.org/see/gsexample#sample-1> rdf:type <http://purl.org/see/gsexample#rat_liver_sample> ,
+                                                  <http://purl.org/see/gsexample#sample> ,
+                                                  owl:NamedIndividual ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://purl.org/see/gsexample#bears> ;
+                                                    owl:someValuesFrom <http://purl.org/see/gsexample#gs_activity>
+                                                  ] ,
+                                                  [ rdf:type owl:Class ;
+                                                    owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <http://purl.org/see/gsexample#isolated_from> ;
+                                                                           owl:someValuesFrom <http://purl.org/see/gsexample#rat_liver>
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <http://purl.org/see/gsexample#isolated_from> ;
+                                                                           owl:allValuesFrom <http://purl.org/see/gsexample#rat_liver>
+                                                                         ]
+                                                                       )
+                                                  ] ;
+                                         
+                                         rdfs:comment "The sample isolated by Tate et al from rat liver, bearing GS-activity."@en ;
+                                         
+                                         <http://purl.org/see/gsexample#is_output_of> <http://purl.org/see/gsexample#TLM_purification> ;
+                                         
+                                         <http://purl.org/see/gsexample#is_input_of> <http://purl.org/see/gsexample#assay-1> .
+
+
+
+###  http://purl.org/see/gsexample#sample-2
+
+<http://purl.org/see/gsexample#sample-2> rdf:type <http://purl.org/see/gsexample#rat_liver_sample> ,
+                                                  <http://purl.org/see/gsexample#sample> ,
+                                                  owl:NamedIndividual ;
+                                         
+                                         rdfs:comment "The homogenized rat liver sample that was used for protein purification by Tate et al."@en ;
+                                         
+                                         <http://purl.org/see/gsexample#is_input_of> <http://purl.org/see/gsexample#TLM_purification> .
+
+
+
+###  http://purl.org/see/gsexample#suresh_tate
+
+<http://purl.org/see/gsexample#suresh_tate> rdf:type <http://purl.org/see/rdo#agent> ,
+                                                     <http://purl.org/see/rdo#person> ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "Suresh Tate" ;
+                                            
+                                            <http://purl.org/see/rdo#makes_assertion> <http://purl.org/see/gsexample#assertion-10> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-11> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-12> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-15> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-16> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-17> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-18> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-19> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-2> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-20> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-3> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-4> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-5> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-6> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-7> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-8> ,
+                                                                                      <http://purl.org/see/gsexample#assertion-9> ,
+                                                                                      <http://purl.org/see/gsexample#composite_assertion-1> ,
+                                                                                      <http://purl.org/see/gsexample#composite_assertion-2> ,
+                                                                                      <http://purl.org/see/gsexample#composite_assertion-3> ,
+                                                                                      <http://purl.org/see/gsexample#composite_assertion-4> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-1> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-1> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-10> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-10> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-11> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-11> ,
+                                                                                         <http://purl.org/see/gsexample#proposition-12> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-12> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-15> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-15> ,
+                                                                              <http://purl.org/see/gsexample#proposition-16> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-16> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-17> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-17> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-18> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-18> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-19> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-19> ,
+                                                                                         <http://purl.org/see/gsexample#proposition-20> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-20> ,
+                                                                              <http://purl.org/see/gsexample#proposition-3> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-3> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-4> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-4> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-5> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-5> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-6> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-6> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-7> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-7> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-8> ;
+                                            
+                                            <http://purl.org/see/rdo#is_agent_asserting> <http://purl.org/see/gsexample#proposition-8> ,
+                                                                                         <http://purl.org/see/gsexample#proposition-9> ;
+                                            
+                                            <http://purl.org/see/rdo#asserts> <http://purl.org/see/gsexample#proposition-9> ;
+                                            
+                                            <http://purl.org/see/rdo#is_author_of> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+###  http://purl.org/see/gsexample#tate_1972
+
+<http://purl.org/see/gsexample#tate_1972> rdf:type <http://purl.org/see/rdo#report> ,
+                                                   <http://purl.org/see/rdo#report_part> ,
+                                                   owl:NamedIndividual ;
+                                          
+                                          rdfs:label "Tate et al 1972" ;
+                                          
+                                          rdfs:seeAlso "http://www.jbc.org/cgi/content/abstract/247/17/5312"^^xsd:anyURI ;
+                                          
+                                          <http://purl.org/see/rdo#has_author> <http://purl.org/see/gsexample#alton_meister> ,
+                                                                               <http://purl.org/see/gsexample#fang_yun_leu> ,
+                                                                               <http://purl.org/see/gsexample#suresh_tate> ;
+                                          
+                                          <http://purl.org/see/rdo#has_lexical_part> <http://purl.org/see/gsexample#text-2> .
+
+
+
+###  http://purl.org/see/gsexample#text-1
+
+<http://purl.org/see/gsexample#text-1> rdf:type <http://purl.org/see/rdo#text> ,
+                                                owl:NamedIndividual ;
+                                       
+                                       <http://purl.org/see/rdo#has_lexical_structure> """Glutamine synthetase was first isolated in essentially homogeneous
+form from sheep brain8; a procedure for the isolation of this enzyme has been published in a previous volume of this series 9 (see also ref. 10). The enzyme has also been isolated from the brains of other species including man, 11,12 rat, 12 and pig. 13-15 Its isolation has also been described from chicken liver, 16,17 chinese hamster liver, 18 chick neural retina, 19 rat spleen, 20 and rat liver, 21-23"""@en ;
+                                       
+                                       <http://purl.org/see/rdo#is_lexical_part_of> <http://purl.org/see/gsexample#meister_1985> ;
+                                       
+                                       <http://purl.org/see/rdo#expresses_proposition> <http://purl.org/see/gsexample#proposition-1> .
+
+
+
+###  http://purl.org/see/gsexample#text-2
+
+<http://purl.org/see/gsexample#text-2> rdf:type <http://purl.org/see/rdo#text> ,
+                                                owl:NamedIndividual ;
+                                       
+                                       <http://purl.org/see/rdo#has_lexical_structure> "Glutamine synthetase, purified from rat liver, is homogeneous on acrylamide gel electrophoresis and on ultracentrifugation (s20,w, 15.0 S)."@en ;
+                                       
+                                       <http://purl.org/see/rdo#expresses_proposition> <http://purl.org/see/gsexample#proposition-1> ;
+                                       
+                                       <http://purl.org/see/rdo#is_lexical_part_of> <http://purl.org/see/gsexample#tate_1972> .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
+
+
+}
+
+
+
+
+
+
+
+### propositions as named graphs
+
+:proposition-1 { :gs_enzyme-1 rdf:type :gs_enzyme ,
+                      owl:NamedIndividual ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :isolated_from ;
+                        owl:someValuesFrom :rat_liver
+                      ] }
+
+:proposition-3 { :sample-1 rdf:type [ rdf:type owl:Restriction ;
+                                         owl:onProperty :bears ;
+                                         owl:someValuesFrom :gs_activity
+                                       ] }
+
+:proposition-4 { :gs-activity rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :has_bearer ;
+                                                   owl:someValuesFrom :gs_enzyme
+                                                 ] }
+
+:proposition-5 { :sample-1 rdf:type [ rdf:type owl:Restriction ;
+                                         owl:onProperty :isolated_from ;
+                                         owl:someValuesFrom :rat_liver
+                                       ] }
+
+:proposition-15 { :sample-1 :is_output_of :TLM_purification }
+
+:proposition-16 { :TLM-purification :has_input :sample-2 }
+
+:proposition-17 { :sample-2 rdf:type :rat_liver_sample }
+
+:proposition-18 { :rat_liver_sample rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :isolated_from ;
+                                                         owl:someValuesFrom :rat_liver
+                                                       ] }
+
+:proposition-6 { :sample-1 :is_input_of :assay-1 }
+
+:proposition-7 { :assay-1 :has_output :data_item-1 }
+
+:proposition-8 { :data_item-1 rdf:type [ rdf:type owl:Restriction ;
+                                             owl:onProperty :measurement_of ;
+                                             owl:someValuesFrom :gs_activity
+                                           ] }
+
+:proposition-9 { :data_item-1 :is_output_of :assay-1 }
+
+:proposition-10 { :assay-1 rdf:type :gamma_ghs_assay }
+
+:proposition-11 { :gamma_ghs_assay rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :achieves_objective ;
+                                                        owl:someValuesFrom :gs_activity_measurement_objective
+                                                      ] }
+
+:proposition-12 { :gs_activity_measurement_objective owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                              owl:onProperty :is_objective_to_measure ;
+                                                                              owl:someValuesFrom :gs_activity
+                                                                            ] }

@@ -1,0 +1,183 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdo: <http://purl.org/see/rdo#>
+PREFIX : <http://purl.org/see/gsexample#>
+
+# Q1: Which locations of GS have been asserted?
+# A1: rat liver
+
+SELECT ?location
+{
+	_:q11 a rdo:assertion ;
+		rdo:asserts _:q12 .
+	_:q12 a rdo:proposition .
+	GRAPH _:q12
+	{
+	?enzyme rdfs:label "GS-enzyme"@en .
+		_:q13 a ?enzyme ;
+			a _:q14 .
+		_:q14 a owl:Restriction ;
+			owl:onProperty :isolated_from ;
+			owl:someValuesFrom ?location . 
+	}
+}
+
+# Q2: Where has rat liver GS been reported?
+# A2: The Meister 1985 and Tate 1972 reports.
+
+SELECT ?proposition ?report
+{
+	_:q21 a rdo:assertion ;
+		rdo:asserts ?proposition ;
+		rdo:is_assertion_made_in ?report .
+	?proposition a rdo:proposition .
+	GRAPH ?proposition
+	{
+	?enzyme rdfs:label "GS-enzyme"@en .
+		_:q23 a ?enzyme ;
+			a _:q24 .
+		_:q24 a owl:Restriction ;
+			owl:onProperty :isolated_from ;
+			owl:someValuesFrom ?location . 
+	}
+}
+
+# Q3: Do the assertions made in these reports pertain to independent observations?
+# A3: No. Meister’s assertion is based on Tate et al’s assertion. Moreover, some of the authors of the two reports are identical.
+
+ASK
+{
+	_:q31 a rdo:assertion ;
+		rdo:asserts ?proposition .
+	_:q33 a rdo:assertion ;
+		rdo:asserts ?proposition .
+	?proposition a rdo:proposition .
+	GRAPH ?proposition
+	{
+	?enzyme rdfs:label "GS-enzyme"@en .
+		_:q23 a ?enzyme ;
+			a _:q24 .
+		_:q24 a owl:Restriction ;
+			owl:onProperty :isolated_from ;
+			owl:someValuesFrom ?location . 
+	}
+	_:q31 rdo:inferred_from _:q33 .
+}
+
+SELECT ?assertion1 ?assertion2 ?selfCitator
+{
+	?assertion1 a rdo:assertion ;
+		rdo:asserts ?proposition .
+	?assertion2 a rdo:assertion ;
+		rdo:asserts ?proposition .
+	?proposition a rdo:proposition .
+	GRAPH ?proposition
+	{
+	?enzyme rdfs:label "GS-enzyme"@en .
+		_:q23 a ?enzyme ;
+			a _:q24 .
+		_:q24 a owl:Restriction ;
+			owl:onProperty :isolated_from ;
+			owl:someValuesFrom ?location . 
+	}
+	?assertion1 rdo:inferred_from ?assertion2 .
+	?assertion1 rdo:is_assertion_made_by ?selfCitator .
+	?assertion2 rdo:is_assertion_made_by ?selfCitator .
+}
+
+# Q4: Is there experimental evidence and where is it described?
+# A4: Yes. In the Tate 1972 report.
+
+SELECT ?assertion ?proposition ?report
+{
+	?assertion rdo:asserts ?proposition ;
+		rdo:is_inferred_from _:q42 .
+	GRAPH ?proposition
+	{
+	?enzyme rdfs:label "GS-enzyme"@en .
+		_:q23 a ?enzyme ;
+			a _:q24 .
+		_:q24 a owl:Restriction ;
+			owl:onProperty :isolated_from ;
+			owl:someValuesFrom ?location . 
+	}
+	_:q42 rdo:asserts _:q43 ;
+		rdo:is_assertion_made_in ?report .
+	GRAPH _:q43
+	{ _:q44 :measurement_of _:g45 . }
+}
+
+# Q5: Which observations and techniques were used for establishing rat liver as GS source?
+# A5: 1.extraction of a sample from rat liver (technique: TLM purification), 2.that sample has GS-activity (technique: gamma-GHS assay)
+# This query assumes that the different propositions are merged in one assertion.
+
+SELECT ?gsAssertion ?proposition ?evidenceAssertion ?objective ?technique
+{
+	?gsAssertion rdo:asserts ?proposition ;
+		rdo:is_inferred_from ?evidenceAssertion .
+	GRAPH ?proposition
+	{
+	?enzyme rdfs:label "GS-enzyme"@en .
+		_:q23 a ?enzyme ;
+			a _:q24 .
+		_:q24 a owl:Restriction ;
+			owl:onProperty :isolated_from ;
+			owl:someValuesFrom ?location . 
+	}
+	?evidenceAssertion rdo:asserts _:q43 ;
+	GRAPH _:q43
+	{
+		{
+		_:q44 :is_output_of _:q46 .
+		_:q46 a ?technique .
+		?technique rdfs:subClassOf _:q50 .
+			_:q50 a owl:Restriction ;
+				owl:onProperty :achieves_objective ;
+				owl:someValuesFrom ?objective .
+		}
+	UNION
+		{
+			_:q52 :is_output_of ?technique .
+		?technique a _:q53 .
+			_:q53 a owl:Restriction ;
+				owl:onProperty :achieves_objective ;
+				owl:someValuesFrom ?objective .
+		}
+	}
+}
+
+#Q6: Did Tate et al really make these observations and conclusions? Who created this account of their findings?
+#A6: Christian Bölling.
+
+SELECT ?assertion ?curator
+{
+	_:q60 rdo:is_assertion_made_by ?curator ;
+		rdo:asserts _:q61 .
+	GRAPH _:q61
+	{ ?assertion rdo:is_assertion_made_by :suresh_tate }
+}
+
+# All assertions which are directly or indirectly used to infer a given assertion (:targetAssertion):
+SELECT ?premise
+{ :targetAssertion rdo:is_inferred_from ?premise }
+
+# All assertions made in a given report (:targetReport)
+SELECT ?assertion
+{ ?assertion rdo:is_assertion_made_in :targetReport }
+
+# All assertions made by a given agent (:targetAgent)
+SELECT ?assertion
+{ ?assertion rdo:is_assertion_made_by :targetAgent }
+
+# All assertions on the same subject (:targetSubject)
+SELECT ?assertion
+{ ?assertion rdo:is_assertion_asserting :targetSubject }
+
+# All agents making assertions on a given subject (:targetSubject)
+SELECT DISTINCT ?agent
+{
+?assertion rdo:is_assertion_asserting :targetSubject ;
+	rdo:is_assertion_made_by ?agent .
+}

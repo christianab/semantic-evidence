@@ -1,0 +1,1080 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY rdo "http://purl.org/see/rdo#" >
+    <!ENTITY gsexample "http://purl.org/see/gsexample#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY oboInOwl "http://www.geneontology.org/formats/oboInOwl#" >
+]>
+
+
+<rdf:RDF xmlns="http://purl.org/see/gsexample#"
+     xml:base="http://purl.org/see/gsexample"
+     xmlns:rdo="http://purl.org/see/rdo#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:gsexample="http://purl.org/see/gsexample#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
+    <owl:Ontology rdf:about="http://purl.org/see/gsexample">
+        <dc:creator>Christian Bölling
+
+christian.a.boelling@gmail.com</dc:creator>
+        <rdfs:comment xml:lang="en">This OWL file contains the constructs used to represent the supporting background for rat liver as source of glutamine synthetase extracted from the Meister 1985 and Tate 1972 reports in terms of argumentative structure, materials, methods, data and assumptions.</rdfs:comment>
+        <owl:imports rdf:resource="http://purl.org/see/rdo"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#hasURI -->
+
+    <owl:AnnotationProperty rdf:about="&oboInOwl;hasURI"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/see/gsexample#achieves_objective -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;achieves_objective">
+        <rdfs:label xml:lang="en">achieves objective</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#bears -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;bears">
+        <rdfs:label xml:lang="en">bears</rdfs:label>
+        <rdfs:comment xml:lang="en">A material entity A bears a quality B.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#has_bearer -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;has_bearer">
+        <rdfs:label xml:lang="en">has bearer</rdfs:label>
+        <owl:inverseOf rdf:resource="&gsexample;bears"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#has_input -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;has_input">
+        <rdfs:label xml:lang="en">has input</rdfs:label>
+        <owl:inverseOf rdf:resource="&gsexample;is_input_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#has_output -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;has_output">
+        <rdfs:label xml:lang="en">has output</rdfs:label>
+        <owl:inverseOf rdf:resource="&gsexample;is_output_of"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#is_input_of -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;is_input_of">
+        <rdfs:label xml:lang="en">is input of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#is_objective_to_measure -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;is_objective_to_measure">
+        <rdfs:label xml:lang="en">is objective to measure</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#is_output_of -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;is_output_of">
+        <rdfs:label xml:lang="en">is output of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#isolated_from -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;isolated_from">
+        <rdfs:label xml:lang="en">isolated from</rdfs:label>
+        <rdfs:comment xml:lang="en">A material entity A is isolated from a material entity B iff B was a source of A.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#measurement_of -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;measurement_of">
+        <rdfs:label xml:lang="en">measurement of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/gsexample#realizes -->
+
+    <owl:ObjectProperty rdf:about="&gsexample;realizes">
+        <rdfs:label xml:lang="en">realizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/see/rdo#asserts -->
+
+    <owl:ObjectProperty rdf:about="&rdo;asserts"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#bears -->
+
+    <owl:ObjectProperty rdf:about="&rdo;bears"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#has_author -->
+
+    <owl:ObjectProperty rdf:about="&rdo;has_author"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#has_bearer -->
+
+    <owl:ObjectProperty rdf:about="&rdo;has_bearer"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#has_lexical_part -->
+
+    <owl:ObjectProperty rdf:about="&rdo;has_lexical_part"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#is_assertion_expressed_in -->
+
+    <owl:ObjectProperty rdf:about="&rdo;is_assertion_expressed_in"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#is_assertion_made_by -->
+
+    <owl:ObjectProperty rdf:about="&rdo;is_assertion_made_by"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#is_assertion_made_in -->
+
+    <owl:ObjectProperty rdf:about="&rdo;is_assertion_made_in"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#is_directly_inferred_from -->
+
+    <owl:ObjectProperty rdf:about="&rdo;is_directly_inferred_from"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#is_expressed_as -->
+
+    <owl:ObjectProperty rdf:about="&rdo;is_expressed_as"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#is_expressed_in -->
+
+    <owl:ObjectProperty rdf:about="&rdo;is_expressed_in"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#is_lexical_part_of -->
+
+    <owl:ObjectProperty rdf:about="&rdo;is_lexical_part_of"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/see/rdo#has_lexical_structure -->
+
+    <owl:DatatypeProperty rdf:about="&rdo;has_lexical_structure"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/see/gsexample#assay -->
+
+    <owl:Class rdf:about="&gsexample;assay"/>
+    
+
+
+    <!-- http://purl.org/see/gsexample#data_item -->
+
+    <owl:Class rdf:about="&gsexample;data_item">
+        <rdfs:label xml:lang="en">data item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/see/gsexample#gamma_ghs_assay -->
+
+    <owl:Class rdf:about="&gsexample;gamma_ghs_assay">
+        <rdfs:label xml:lang="en">gammaGHS assay</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gsexample;realizes"/>
+                <owl:someValuesFrom rdf:resource="&gsexample;gamma_ghs_assay_protocol"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&gsexample;assay"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gsexample;achieves_objective"/>
+                <owl:someValuesFrom rdf:resource="&gsexample;gs_activity_measurement_objective"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/see/gsexample#gamma_ghs_assay_protocol -->
+
+    <owl:Class rdf:about="&gsexample;gamma_ghs_assay_protocol">
+        <rdfs:label xml:lang="en">gamma-GHS assay protocol</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/see/gsexample#gs_activity -->
+
+    <owl:Class rdf:about="&gsexample;gs_activity">
+        <rdfs:label xml:lang="en">GS-activity</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gsexample;has_bearer"/>
+                <owl:someValuesFrom rdf:resource="&gsexample;gs_enzyme"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The quality of having GS activity i.e. a disposition to catalyze a glutamine synthetase reaction.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/see/gsexample#gs_activity_measurement_objective -->
+
+    <owl:Class rdf:about="&gsexample;gs_activity_measurement_objective">
+        <rdfs:label xml:lang="en">GS-activity measurement objective</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gsexample;is_objective_to_measure"/>
+                <owl:someValuesFrom rdf:resource="&gsexample;gs_activity"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/see/gsexample#gs_enzyme -->
+
+    <owl:Class rdf:about="&gsexample;gs_enzyme">
+        <rdfs:label xml:lang="en">GS-enzyme</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/see/gsexample#protein_purification_objective -->
+
+    <owl:Class rdf:about="&gsexample;protein_purification_objective">
+        <rdfs:comment xml:lang="en">protein purification objective</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/see/gsexample#rat_liver -->
+
+    <owl:Class rdf:about="&gsexample;rat_liver">
+        <rdfs:label xml:lang="en">rat liver</rdfs:label>
+        <rdfs:comment xml:lang="en">Rat livers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/see/gsexample#rat_liver_sample -->
+
+    <owl:Class rdf:about="&gsexample;rat_liver_sample">
+        <rdfs:label xml:lang="en">rat liver sample</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&gsexample;sample"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gsexample;isolated_from"/>
+                        <owl:someValuesFrom rdf:resource="&gsexample;rat_liver"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/see/gsexample#sample -->
+
+    <owl:Class rdf:about="&gsexample;sample"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#assertion -->
+
+    <owl:Class rdf:about="&rdo;assertion"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#person -->
+
+    <owl:Class rdf:about="&rdo;person"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#proposition -->
+
+    <owl:Class rdf:about="&rdo;proposition"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#report -->
+
+    <owl:Class rdf:about="&rdo;report"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#report_part -->
+
+    <owl:Class rdf:about="&rdo;report_part"/>
+    
+
+
+    <!-- http://purl.org/see/rdo#text -->
+
+    <owl:Class rdf:about="&rdo;text"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/see/gsexample#Meister1985_part-1 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;Meister1985_part-1">
+        <rdf:type rdf:resource="&rdo;report_part"/>
+        <rdfs:label>Meister 1985 part 1</rdfs:label>
+        <rdo:is_part_of rdf:resource="&gsexample;meister_1985"/>
+        <rdo:is_expressed_as rdf:resource="&gsexample;text-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#TLM_purification -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;TLM_purification">
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gsexample;achieves_objective"/>
+                <owl:someValuesFrom rdf:resource="&gsexample;protein_purification_objective"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:label xml:lang="en">TLM purification</rdfs:label>
+        <rdfs:comment xml:lang="en">The protein purification process performed by Tate et al.</rdfs:comment>
+        <has_input rdf:resource="&gsexample;sample-2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#alton_meister -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;alton_meister">
+        <rdf:type rdf:resource="&rdo;person"/>
+        <rdfs:label>Alton Meister</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assay-1 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assay-1">
+        <rdf:type rdf:resource="&gsexample;gamma_ghs_assay"/>
+        <rdfs:comment xml:lang="en">One of the assays that Tate et al have performed</rdfs:comment>
+        <has_output rdf:resource="&gsexample;data_item-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-1 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-1">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! some GS-enzyme isolated from some rat liver ! AM</rdfs:label>
+        <rdfs:comment xml:lang="en">Actually the reasoning involved during text comprehension is more fine grained: At the literal level Meisters text contains sentences certain parts of which express, when combined, the proposition that the isolation of GS has been described from rat liver.
+(Isolation of GS has been described from rat liver)
+Used to infer:
+(GS was isolated from rat liver)
+Used to infer:
+(GS was located in rat liver)
+Used to infer:
+(GS is located(active) in all rat livers).
+
+Note that there are all sorts of semantic overloads: GS refers to a certain type of protein (chemical structure) wiith a certain type of catalytic activity).
+is located: physically present (part of), activity present (reaction is capable of carrying significant non-zero flux).
+
+At this point it is crucial that the object property assertion that this assertion !(GS isLocated RatLiver)!AM is part of the Meister_1985 report is asserted by another agent (the creator of the ontology for example). So it becomes clear that the assertion is the result of an interpretation of the Meister 1985 text by another agent.
+</rdfs:comment>
+        <rdfs:comment xml:lang="en">Meisters assertion that GS is located in rat liver. This assertion asserts the proposition that GS is located in rat liver. This proposition is expressed in the text that expresses Alton Meisters report.</rdfs:comment>
+        <rdo:is_assertion_made_in rdf:resource="&gsexample;Meister1985_part-1"/>
+        <rdo:is_directly_inferred_from rdf:resource="&gsexample;assertion-2"/>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-1"/>
+        <rdo:is_assertion_expressed_in rdf:resource="&gsexample;text-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-10 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-10">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label xml:lang="en">! assay-1 Type gammaGHS assay !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-11 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-11">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label xml:lang="en">! gammaGHS assay SubClassOf (achieves objective some GS-activity measurement objective) !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-12 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-12">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label xml:lang="en">! GS-activity measurement objective SubClassOf (is objective to measure some GS-activity) !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-12"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-15 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-15">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! sample-1 is output of TLM purification !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-15"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-16 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-16">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label xml:lang="en">! TLM purification has input sample-2 !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-16"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-17 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-17">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! sample-2 Type rat liver extract !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-17"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-18 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-18">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! rat liver extract SubClassOf (isolated from some rat liver) !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-18"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-19 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-19">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! TLM purification Type (achieves objective some protein purification objective) !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-19"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-2 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-2">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! some GS-enzyme isolated from some rat liver ! ST FL AM</rdfs:label>
+        <rdfs:comment xml:lang="en">Interpretations of some... some... assertions: In assertions of the kind some A is_related_to some B it is basically asserted that there exists an x and x is an instance of both the classes A and the class (is_related_to B). If these instances cannot be named with an URI, one has to resort to blank nodes or &quot;skolemications&quot; i.e. somehow designed URIs to denote x as a resource. For the purpose of this proof of concept we will simply use our own URIs.</rdfs:comment>
+        <rdo:is_directly_inferred_from rdf:resource="&gsexample;composite_assertion-1"/>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-1"/>
+        <rdo:is_assertion_expressed_in rdf:resource="&gsexample;text-2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-20 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-20">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! protein purification objective SubclassOf (is objective to purify some protein) !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-20"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-3 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-3">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label xml:lang="en">! sample-1 Type (bears some GS-activity) ! ST FL AM</rdfs:label>
+        <rdfs:comment>Actually this assertion is inferred on the basis that the activity measured is significantly larger than 0 u/mg (would be intresting to know whether they applied some negative control for the assay)</rdfs:comment>
+        <rdo:is_directly_inferred_from rdf:resource="&gsexample;composite_assertion-2"/>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-30 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-30">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! some GS-enzyme isolated from some rat liver ! CB</rdfs:label>
+        <rdo:is_directly_inferred_from rdf:resource="&gsexample;assertion-2"/>
+        <rdo:is_assertion_made_by rdf:resource="&gsexample;christian_boelling"/>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-4 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-4">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! GS-activity SubClassOf (has bearer some GS-enzyme) !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-5 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-5">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! sample-1 Type (isolated from some rat liver) !</rdfs:label>
+        <rdo:is_directly_inferred_from rdf:resource="&gsexample;composite_assertion-4"/>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-6 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-6">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! sample-1 is input of assay-1 !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-7 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-7">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! assay-1 has output data item-1 !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-8 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-8">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! data-item-1 Type (measurement of some GS-activity) !</rdfs:label>
+        <rdo:is_directly_inferred_from rdf:resource="&gsexample;composite_assertion-3"/>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#assertion-9 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;assertion-9">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! data item-1 is output of assay-1 !</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#christian_boelling -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;christian_boelling">
+        <rdf:type rdf:resource="&rdo;person"/>
+        <rdfs:label>Christian Bölling</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#composite_assertion-1 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;composite_assertion-1">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdfs:label>! GS-activity SubClassOf (has bearer some GS-enzyme) ! AND
+! sample-1 Type (bears some GS-activity) ! AND
+! sample-1 Type (derived from some rat liver) !
+ST FL AM</rdfs:label>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-3"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-4"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-5"/>
+        <rdo:is_assertion_made_in rdf:resource="&gsexample;tate_1972"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#composite_assertion-2 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;composite_assertion-2">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-6"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-7"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-8"/>
+        <rdo:is_assertion_made_in rdf:resource="&gsexample;tate_1972"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#composite_assertion-3 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;composite_assertion-3">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-10"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-11"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-12"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-9"/>
+        <rdo:is_assertion_made_in rdf:resource="&gsexample;tate_1972"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#composite_assertion-4 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;composite_assertion-4">
+        <rdf:type rdf:resource="&rdo;assertion"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-15"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-16"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-17"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-18"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-19"/>
+        <rdo:has_conjunctive_part rdf:resource="&gsexample;assertion-20"/>
+        <rdo:is_assertion_made_in rdf:resource="&gsexample;tate_1972"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#data_item-1 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;data_item-1">
+        <rdf:type rdf:resource="&gsexample;data_item"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gsexample;measurement_of"/>
+                <owl:someValuesFrom rdf:resource="&gsexample;gs_activity"/>
+            </owl:Restriction>
+        </rdf:type>
+        <is_output_of rdf:resource="&gsexample;assay-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#fang_yun_leu -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;fang_yun_leu">
+        <rdf:type rdf:resource="&rdo;person"/>
+        <rdfs:label>Fang-Yun Leu</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#gs_enzyme-1 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;gs_enzyme-1">
+        <rdf:type rdf:resource="&gsexample;gs_enzyme"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gsexample;isolated_from"/>
+                <owl:someValuesFrom rdf:resource="&gsexample;rat_liver"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:comment xml:lang="en">The glutamine synthetase enzyme isolated by Tate et al.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#meister_1985 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;meister_1985">
+        <rdf:type rdf:resource="&rdo;report"/>
+        <rdfs:label>Meister 1985</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://dx.doi.org/10.1016/S0076-6879(85)13030-2</rdfs:seeAlso>
+        <rdo:has_author rdf:resource="&gsexample;alton_meister"/>
+        <rdo:has_lexical_part rdf:resource="&gsexample;text-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-1 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-1">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label>some GS-enzyme isolated from some rat liver</rdfs:label>
+        <rdfs:comment xml:lang="en">Actually the reasoning involved during text comprehension is more fine grained: At the literal level Meisters text contains sentences certain parts of which express, when combined, the proposition that the isolation of GS has been described from rat liver.
+(Isolation of GS has been described from rat liver)
+Used to infer:
+(GS was isolated from rat liver)
+Used to infer:
+(GS was located in some rat liver)
+Used to infer:
+(GS is located(active) in all rat livers).
+
+Note that there are all sorts of semantic overloads: GS refers to a certain type of protein (chemical structure) wiith a certain type of catalytic activity).
+is located: physically present (part of), activity present (reaction is capable of carrying significant non-zero flux).
+
+At this point it is crucial that the object property assertion that this assertion !(GS isLocated RatLiver)!AM is part of the Meister_1985 report is asserted by another agent (the creator of the ontology for example). So it becomes clear that the assertion is the result of an interpretation of the Meister 1985 text by another agent.
+</rdfs:comment>
+        <rdo:is_proposition_expressed_in rdf:resource="&gsexample;text-1"/>
+        <rdo:is_proposition_expressed_in rdf:resource="&gsexample;text-2"/>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <rdfs:comment xml:lang="en">Actually the reasoning involved during text comprehension is more fine grained: At the literal level Meisters text contains sentences certain parts of which express, when combined, the proposition that the isolation of GS has been described from rat liver.
+(Isolation of GS has been described from rat liver)
+Used to infer:
+(GS was isolated from rat liver)
+Used to infer:
+(GS was located in rat liver)
+Used to infer:
+(GS is located(active) in all rat livers).
+
+Note that there are all sorts of semantic overloads: GS refers to a certain type of protein (chemical structure) wiith a certain type of catalytic activity).
+is located: physically present (part of), activity present (reaction is capable of carrying significant non-zero flux).
+
+At this point it is crucial that the object property assertion that this assertion !(GS isLocated RatLiver)!AM is part of the Meister_1985 report is asserted by another agent (the creator of the ontology for example). So it becomes clear that the assertion is the result of an interpretation of the Meister 1985 text by another agent.
+</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&gsexample;proposition-1"/>
+        <owl:annotatedTarget rdf:resource="&gsexample;text-1"/>
+        <owl:annotatedProperty rdf:resource="&rdo;is_proposition_expressed_in"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-10 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-10">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">assay-1 Type gammaGHS assay</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-11 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-11">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label>gammaGHS assay SubClassOf (achieves objective some GS-activity measurement objective)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-12 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-12">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">GS-activity measurement objective SubClassOf (is objective to measure some GS-activity)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-15 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-15">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">sample-1 is output of TLM purification</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-16 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-16">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">TLM purification has input sample-2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-17 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-17">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">sample-2 Type rat liver extract</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-18 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-18">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">rat liver extract SubClassOf (isolated from some rat liver)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-19 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-19">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label>TLM purification Type (achieves objective some protein purification objective)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-20 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-20">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label>protein purification objective SubclassOf (is objective to purify some protein)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-3 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-3">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">sample-1 Type (bears some GS-activity)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-4 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-4">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">GS-activity SubClassOf (has bearer some GS-enzyme)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-5 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-5">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">sample-1 Type (isolated from some rat liver)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-6 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-6">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">sample-1 is input of assay-1</rdfs:label>
+        <rdo:is_assertion_asserting rdf:resource="&gsexample;proposition-6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-7 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-7">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">assay-1 has output data item-1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-8 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-8">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">data-item-1 Type (measurement of some GS-activity)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#proposition-9 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;proposition-9">
+        <rdf:type rdf:resource="&rdo;proposition"/>
+        <rdfs:label xml:lang="en">data item-1 is output of assay-1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#sample-1 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;sample-1">
+        <rdf:type rdf:resource="&gsexample;rat_liver_sample"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&gsexample;bears"/>
+                <owl:someValuesFrom rdf:resource="&gsexample;gs_activity"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gsexample;isolated_from"/>
+                        <owl:someValuesFrom rdf:resource="&gsexample;rat_liver"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&gsexample;isolated_from"/>
+                        <owl:allValuesFrom rdf:resource="&gsexample;rat_liver"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdf:type>
+        <rdfs:comment xml:lang="en">The sample isolated by Tate et al from rat liver, bearing GS-activity.</rdfs:comment>
+        <is_output_of rdf:resource="&gsexample;TLM_purification"/>
+        <is_input_of rdf:resource="&gsexample;assay-1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#sample-2 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;sample-2">
+        <rdf:type rdf:resource="&gsexample;rat_liver_sample"/>
+        <rdfs:comment xml:lang="en">The homogenized rat liver sample that was used for protein purification by Tate et al.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#suresh_tate -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;suresh_tate">
+        <rdf:type rdf:resource="&rdo;person"/>
+        <rdfs:label>Suresh Tate</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#tate_1972 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;tate_1972">
+        <rdf:type rdf:resource="&rdo;report"/>
+        <rdfs:label>Tate et al 1972</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="&xsd;anyURI">http://www.jbc.org/cgi/content/abstract/247/17/5312</rdfs:seeAlso>
+        <rdo:has_author rdf:resource="&gsexample;alton_meister"/>
+        <rdo:has_author rdf:resource="&gsexample;fang_yun_leu"/>
+        <rdo:has_author rdf:resource="&gsexample;suresh_tate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#text-1 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;text-1">
+        <rdf:type rdf:resource="&rdo;text"/>
+        <rdo:has_lexical_structure xml:lang="en">Glutamine synthetase was first isolated in essentially homogeneous
+form from sheep brain8; a procedure for the isolation of this enzyme has been published in a previous volume of this series 9 (see also ref. 10). The enzyme has also been isolated from the brains of other species including man, 11,12 rat, 12 and pig. 13-15 Its isolation has also been described from chicken liver, 16,17 chinese hamster liver, 18 chick neural retina, 19 rat spleen, 20 and rat liver, 21-23</rdo:has_lexical_structure>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/see/gsexample#text-2 -->
+
+    <owl:NamedIndividual rdf:about="&gsexample;text-2">
+        <rdf:type rdf:resource="&rdo;text"/>
+        <rdo:has_lexical_structure xml:lang="en">Glutamine synthetase, purified from rat liver, is homogeneous on acrylamide gel electrophoresis and on ultracentrifugation (s20,w, 15.0 S).</rdo:has_lexical_structure>
+        <rdo:is_lexical_part_of rdf:resource="&gsexample;tate_1972"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

@@ -23,11 +23,26 @@ The class {{{rdo:report}}} represents accounts intended to accurately describe a
 
 RDO specifies various properties to represent the relations between instances of these classes. In particular, argumentative structure is captured by the property _{{{rdo:is_inferred_from}}}_ which relates an instance of assertion to another if and only if the former is, directly or indirectly, inferred from the latter (and possibly other premises).
 ----
-----
 
 http://semantic-evidence.googlecode.com/svn/wiki/images/figure-1-rdo-core-model.png
 
 *Core classes and properties in RDO.* Boxes denote labelled classes, arrows denote labelled properties, direction of arrows denotes property domains and ranges. Asterisk: property has domain and range-specific sub-properties.
 ----
+
+Full, formal specification of all RDO constructs is provided in the [http://semantic-evidence.googlecode.com/svn/trunk/ontology/rdo.owl ontology file].
+
+==Example for the core model==
+Here is an example of how the relations between a particular assertion and its subject and provenance are represented using RDO:
+
+The article itself, _Meister 1985_, is classified as instance of {{{rdo:report}}} annotated with a uniform resource locator (URL) providing its digital representation.
+
+The second paragraph of _Meister 1985_ constitutes a {{{rdo:report_part}}}. It is expressed as the English language text as which it is written and which is represented as an instance of {{{rdo:text}}}. The original text is linked to it via the data property _{{{rdo:has_lexical_structure}}}_.
+
+Meister's claim that glutamine synthetase was isolated from rat liver contained in this paragraph is represented by an instance of {{{rdo:assertion}}} (A1) labelled as '! some GS-enzyme isolated from some rat liver ! AM' to indicate the assertion subject in a concise, human readable manner (formalization of assertion subjects is described [assertion_subjects here]).
+
+A1 is related to a corresponding instance of {{{rdo:proposition}}} identifying the subject of the claim, to an instance of {{{rdo:agent}}} representing Alton Meister, and to said report part by the properties _{{{rdo:asserts}}}_, _{{{rdo:is_assertion_made_by}}}_ and _{{{rdo:is_assertion_made_in}}}_, respectively.
 ----
- 
+http://semantic-evidence.googlecode.com/svn/wiki/images/figure-2-assertion-with-provenance.png
+
+*Representation of assertions with subject and provenance*. {{{Assertion}}} instances are related to {{{proposition}}} instances representing the subject of the assertion by _{{{asserts}}}_, to the agents making the assertion by _{{{is_assertion_made_by}}}_ and to the reports in which they are made by _{{{is_assertion_made_in}}}_. See text for additional relations among assertions, agents, reports and textual representations. Assertion and proposition labels reflect the graph representation of assertion subjects (see text). Color code of assertion and proposition labels indicates the structured representation of assertion subjects (yellow: class, blue italics: property, red: Manchester syntax restriction keyword). Circle shows the index by which the assertion is referred to in the text.
+----

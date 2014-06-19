@@ -25,7 +25,7 @@ RDO specifies various properties to represent the relations between instances of
 ----
 ----
 
-http://semantic-evidence.googlecode.com/svn/wiki/images/fgure-1-rdo-core-model.png
+http://semantic-evidence.googlecode.com/svn/wiki/images/figure-1-rdo-core-model.png
 
 *Core classes and properties in RDO.* Boxes denote labelled classes, arrows denote labelled properties, direction of arrows denotes property domains and ranges. Asterisk: property has domain and range-specific sub-properties.
 ----

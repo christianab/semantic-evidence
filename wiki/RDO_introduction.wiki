@@ -2,26 +2,26 @@
 #labels Featured
 
 ==Reasoning and Discourse Ontology (RDO)==
-RDO provides a lightweight OWL-vocabulary for representing scientific claims, their subjects (i.e. what the claims are about), the argumentative relations between claims and claim provenance.
+RDO provides *a lightweight OWL-vocabulary* for representing scientific claims, their subjects (i.e. what the claims are about), the argumentative relations between claims and claim provenance.
 
-RDO is the backbone of the SEE approach for representing scientific evidence.
+RDO is the *backbone of the SEE approach* for representing scientific evidence.
 
-The current version of RDO is available [http://semantic-evidence.googlecode.com/svn/trunk/ontology/rdo.owl here].
+The *current version* of RDO is available [http://semantic-evidence.googlecode.com/svn/trunk/ontology/rdo.owl here].
 
-The typical scenario that underlies the constructs defined in RDO is the following: Agents (e.g., individual scientists) make claims on particular occasions (e.g., as authors of a published scientific article) about a subject of inquiry. The subject of the claim - i.e. what is claimed - is communicated in some linguistic form, often as part of a more comprehensive report (e.g., a scientific article) authored by the agents. Claims are usually justified by other claims the subject of which has been accepted as true, usually on the basis of yet other claims.
+The *typical scenario* that underlies the constructs defined in RDO is the following: Agents (e.g., individual scientists) make claims on particular occasions (e.g., as authors of a published scientific article) about a subject of inquiry. The subject of the claim - i.e. what is claimed - is communicated in some linguistic form, often as part of a more comprehensive report (e.g., a scientific article) authored by the agents. Claims are usually justified by other claims the subject of which has been accepted as true, usually on the basis of yet other claims.
 
 ==The RDO core model==
-RDO rests on the distinction of a claim, its subject and the linguistic form in which this subject is communicated and is centered around the concept of an assertion: instances of the class {{{assertion}}} ({{{courier}}} typeface denotes OWL classes, _{{{courier in italics}}}_ denotes OWL properties) represent particular claims made by particular agents on a particular occasion that a particular proposition, the subject of the claim, is true.
+RDO rests on the *distinction of a claim, its subject and the linguistic form in which this subject is communicated* and is centered around the concept of an assertion: instances of the class {{{rdo:assertion}}} ({{{courier}}} typeface denotes OWL classes, _{{{courier in italics}}}_ denotes OWL properties) represent particular claims made by particular agents on a particular occasion that a particular proposition, the subject of the claim, is true.
 
-Propositions, in our model, are represented by the class {{{proposition}}} and taken to represent the semantic content of contextualized lexical entities formulated in some natural or artificial language.
+Propositions, in our model, are represented by the class {{{rdo:proposition}}} and taken to represent the semantic content of contextualized lexical entities formulated in some natural or artificial language.
 
-The lexical entities by which the subject of a claim and propositions and reports in general are formulated are represented using the class {{{text}}}.
+The lexical entities by which the subject of a claim and propositions and reports in general are formulated are represented using the class {{{rdo:text}}}.
 
-The class {{{report}}} represents accounts intended to accurately describe an event or situation. Thus, scientific journal articles or database records as typical sources of assertions are examples of a {{{rdo:report}}}.
+The class {{{rdo:report}}} represents accounts intended to accurately describe an event or situation. Thus, scientific journal articles or database records as typical sources of assertions are examples of a {{{rdo:report}}}.
 
-{{{Agent}}} is used to represent individual persons, corporate bodies or information processing devices as roleplayers in the creation of reports or assertions.
+{{{rdo:agent}}} is used to represent individual persons, corporate bodies or information processing devices as roleplayers in the creation of reports or assertions.
 
-RDO specifies various properties to represent the relations between instances of these classes. In particular, argumentative structure is captured by the property _{{{is_inferred_from}}}_ which relates an instance of assertion to another if and only if the former is, directly or indirectly, inferred from the latter (and possibly other premises).
+RDO specifies various properties to represent the relations between instances of these classes. In particular, argumentative structure is captured by the property _{{{rdo:is_inferred_from}}}_ which relates an instance of assertion to another if and only if the former is, directly or indirectly, inferred from the latter (and possibly other premises).
 
 http://semantic-evidence.googlecode.com/svn/wiki/images/fgure-1-rdo-core-model.png
 

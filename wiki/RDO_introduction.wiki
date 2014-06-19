@@ -24,6 +24,7 @@ The class {{{rdo:report}}} represents accounts intended to accurately describe a
 RDO specifies various properties to represent the relations between instances of these classes. In particular, argumentative structure is captured by the property _{{{rdo:is_inferred_from}}}_ which relates an instance of assertion to another if and only if the former is, directly or indirectly, inferred from the latter (and possibly other premises).
 ----
 ----
+
 http://semantic-evidence.googlecode.com/svn/wiki/images/figure-1-rdo-core-model.png
 
 *Core classes and properties in RDO.* Boxes denote labelled classes, arrows denote labelled properties, direction of arrows denotes property domains and ranges. Asterisk: property has domain and range-specific sub-properties.

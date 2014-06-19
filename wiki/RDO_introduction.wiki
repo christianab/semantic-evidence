@@ -1,0 +1,14 @@
+#labels Featured
+#Introduction to the Reasoning and Discourse Ontology (RDO).
+
+= Reasoning and Discourse Ontology (RDO)=
+
+RDO provides a lightweight OWL-vocabulary for representing scientific claims, their subjects (i.e. what the claims are about), the argumentative relations between claims and claim provenance.
+
+RDO is the backbone of the SEE approach for representing scientific evidence.
+
+The current version of RDO is available [http://semantic-evidence.googlecode.com/svn/trunk/ontology/rdo.owl here].
+
+The typical scenario that underlies the constructs defined in RDO is the following: Agents (e.g., individual scientists) make claims on particular occasions (e.g., as authors of a published scientific article) about a subject of inquiry. The subject of the claim - i.e. what is claimed - is communicated in some linguistic form, often as part of a more comprehensive report (e.g., a scientific article) authored by the agents. Claims are usually justified by other claims the subject of which has been accepted as true, usually on the basis of yet other claims.
+
+= Core classes and properties =

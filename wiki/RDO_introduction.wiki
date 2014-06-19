@@ -23,4 +23,6 @@ The class {{{report}}} represents accounts intended to accurately describe an ev
 
 RDO specifies various properties to represent the relations between instances of these classes. In particular, argumentative structure is captured by the property _{{{is_inferred_from}}}_ which relates an instance of assertion to another if and only if the former is, directly or indirectly, inferred from the latter (and possibly other premises).
 
+http://semantic-evidence.googlecode.com/svn/wiki/images/figure-1.pdf
+
  

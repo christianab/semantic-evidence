@@ -1,5 +1,5 @@
+#summary Introduction to the Reasoning and Discourse Ontology (RDO).
 #labels Featured
-#Introduction to the Reasoning and Discourse Ontology (RDO).
 
 ==Reasoning and Discourse Ontology (RDO)==
 RDO provides a lightweight OWL-vocabulary for representing scientific claims, their subjects (i.e. what the claims are about), the argumentative relations between claims and claim provenance.

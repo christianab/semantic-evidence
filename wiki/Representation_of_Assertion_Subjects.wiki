@@ -17,7 +17,7 @@ http://semantic-evidence.googlecode.com/svn/wiki/images/figure-5-assertion-subje
 
 ==Labelling {{{assertion}}} and {{{proposition}}} instances==
 
-We have adopted the following nomenclature for labelling {{{proposition}}} and {{{assertion}}} instances. Labels of {{{proposition}}} instances are derived from the labels of the resources used in its associated graph representation and the type of axiom involved. For restrictions, subclass axioms and type declarations the corresponding keywords of the [http://www.w3.org/TR/2012/NOTE-owl2-manchester-syntax-20121211 Manchester OWL Syntax] are used.
+Labels of {{{proposition}}} instances are derived from the labels of the resources used in its associated graph representation and the type of axiom involved. For restrictions, subclass axioms and type declarations the corresponding keywords of the [http://www.w3.org/TR/2012/NOTE-owl2-manchester-syntax-20121211 Manchester OWL Syntax] are used.
 
 {{{Proposition}}} instances whose graph representation is derived from formalizing a statement of the form "some A related to some B" i.e. which consists of the instantiation of a class {{{(A and}}} _{{{related_to}}}_ {{{some B)}}} are alternatively labelled as "some A _related_to_ some B".
 

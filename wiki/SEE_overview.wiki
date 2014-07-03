@@ -1,4 +1,4 @@
-#Overview of the SEE approach.
+# Overview of the SEE approach.
 
 ==Scientific evidence==
 
@@ -35,5 +35,3 @@ SEE relies on an abstract model for the representation of claims, provenance and
 Claim content e.g., _what_ is claimed regarding the properties of biological entities or the results and methods of an investigation is represented in RDF graphs by using appropriately defined semantic web resources and design patterns which as a best practice should, if possible, be re-used from existing domain ontologies.
 
 The connection between claims as representational primitives and their content relies on named RDF graphs which enable pointing to collections of RDF-triples or OWL-axioms serialized as such.
-
-

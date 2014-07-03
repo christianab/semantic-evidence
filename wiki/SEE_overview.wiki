@@ -18,7 +18,7 @@ SEE identifies *four minimal components* for representing evidence. An expressiv
   # the *agents* making the claims and arguments
   # the *sources* in which claims were originally made e.g., the original scientific articles or database records.
 
-[SEE_DEsign_Principles Read more] about the design principles for representing evidence and how these minimal components were identified.
+[SEE_Design_Principles Read more] about the design principles for representing evidence and how these minimal components were identified.
 
 =Overview of the SEE approach==
 

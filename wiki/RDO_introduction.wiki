@@ -42,6 +42,7 @@ Meister's claim that glutamine synthetase was isolated from rat liver contained 
 
 A1 is related to a corresponding instance of {{{rdo:proposition}}} identifying the subject of the claim, to an instance of {{{rdo:agent}}} representing Alton Meister, and to said report part by the properties _{{{rdo:asserts}}}_, _{{{rdo:is_assertion_made_by}}}_ and _{{{rdo:is_assertion_made_in}}}_, respectively.
 ----
+
 http://semantic-evidence.googlecode.com/svn/wiki/images/figure-2-assertion-with-provenance.png
 
 *Representation of assertions with subject and provenance*. {{{Assertion}}} instances are related to {{{proposition}}} instances representing the subject of the assertion by _{{{asserts}}}_, to the agents making the assertion by _{{{is_assertion_made_by}}}_ and to the reports in which they are made by _{{{is_assertion_made_in}}}_. See text for additional relations among assertions, agents, reports and textual representations. Assertion and proposition labels reflect the graph representation of assertion subjects (see text). Color code of assertion and proposition labels indicates the structured representation of assertion subjects (yellow: class, blue italics: property, red: Manchester syntax restriction keyword). Circle shows the index by which the assertion is referred to in the text.

@@ -1,5 +1,3 @@
-
-
 =Representation of assertion subjects=
 Part of the SEE approach is the structured representation of assertion subjects i.e. of _what_ is asserted in each assertion.
 
@@ -12,7 +10,7 @@ While representation of a claim *using an assertion instance as a representation
 ==Example==
 In assertion A10 it is asserted by Tate and co-workers that the particular assay they performed was a γ-GHS assay. The representation of this statement as a graph identified by the IRI of the proposition instance linked to the assertion instance representing A10 enables to access the entities A10 is about: the particular assay, its asserted type, and the typing relation itself.
 
-http://semantic-evidence.googlecode.com/svn/wiki/images/figure-1-rdo-core-model.png
+http://semantic-evidence.googlecode.com/svn/wiki/images/figure-5-assertion-subjects.png
 
 *Representation of assertion subjects as named graphs.* In SEE structured, queryable representations of assertion subjects are provided as named graphs. A) The structured representation of the subject of an assertion can be accessed as the RDF graph identified by the IRI of the {{{rdo:proposition}}} instance related by the _{{{rdo:asserts}}}_ property to the {{{rdo:assertion}}} instance representing the assertion. B) Structured representation of the subject of assertion A10 asserting that the particular assay performed by Tate et al. (:assay-1) was a γ-GHS assay (:gamma_ghs_assay). C) TriG representation of the graph shown in B. 
 ----

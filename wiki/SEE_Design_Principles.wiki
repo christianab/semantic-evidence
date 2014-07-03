@@ -12,7 +12,7 @@ SEE is based on *two basic design principles* for the representation of evidence
 ==Rationale==
 Accounts of evidence are directed towards the *justification of scientific claims*. The SEE approach is based on the notion that scientific claims put forward possible, more or less likely scenarios and outcomes - *[http://plato.stanford.edu/archives/sum2012/entries/states-of-affairs/ states of affairs]* - as being accurate descriptions of a subject of scientific inquiry.
 
-Something is evidence for a certain state of affairs, if and only if it gives reason to believe that this state of affairs in fact obtains [23]. A *pairing of evidence and what it is claimed to be evidence for* therefore *corresponds to the set of premises and the conclusion of an argument* in which the truth of the premises alleges to give reason to believe the conclusion is true.
+Something is evidence for a certain state of affairs, if and only if it gives reason to believe that this state of affairs in fact obtains. A *pairing of evidence and what it is claimed to be evidence for* therefore *corresponds to the set of premises and the conclusion of an argument* in which the truth of the premises alleges to give reason to believe the conclusion is true.
 
 ===Therefore the evidence used by authors or agents to justify a claim, possibly using further unstated background assumptions, can be mirrored by an argumentative structure having the claim as its conclusion.==
 
@@ -36,4 +36,8 @@ Knowing which agent made the claim is crucial for *evaluating independence and r
 
 ==Minimal components for representing evidence==
 
-We therefore identify as minimal components for modelling evidence elements representing (i) scientific claims and the argumentative structure used to justify them by other claims, (ii) the subjects of the claims i.e. that what is claimed with regard to a subject of inquiry, (iii) the agents making the claims and arguments, (iv) the sources in which claims were originally made e.g., the original scientific articles or database records. 
+We therefore identify as minimal components for modelling evidence elements representing
+  # *scientific claims* and the *argumentative structure* used to justify them by other claims
+  # the *subjects of the claims* i.e. of that _what_ is claimed with regard to a subject of inquiry
+  # the *agents* making the claims and arguments
+  # the *sources* in which claims were originally made e.g., the original scientific articles or database records.

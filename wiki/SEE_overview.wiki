@@ -27,12 +27,12 @@ Based on the foregoing, the SEE approach for representing evidence consists of p
 
 (i) a formal representation of scientific claims, their provenance and the argumentative structure used to justify them by other claims
 
-(ii) a formal representation of claim content and
+(ii) a formal [Representation_of_Assertion_Subjects representation of claim content] and
 
 (iii) a coherent integration of the two.
 
 SEE relies on an abstract model for the representation of claims, provenance and argumentative structure specified in the [RDO_introduction Reasoning and Discourse Ontology (RDO)], a lightweight OWL vocabulary developed for this purpose.
 
-Claim content e.g., _what_ is claimed regarding the properties of biological entities or the results and methods of an investigation is represented in RDF graphs by using appropriately defined semantic web resources and design patterns which as a best practice should, if possible, be re-used from existing domain ontologies.
+Claim content e.g., _what_ is claimed regarding the properties of biological entities or the results and methods of an investigation is [Representation_of_Assertion_Subjects represented in RDF graphs] by using appropriately defined semantic web resources and design patterns which as a best practice should, if possible, be re-used from existing domain ontologies.
 
 The connection between claims as representational primitives and their content relies on named RDF graphs which enable pointing to collections of RDF-triples or OWL-axioms serialized as such.

@@ -1,10 +1,10 @@
 #summary Overview of the SEE approach.
 
-==Scientific evidence==
+=Scientific evidence==
 
 Scientific evidence, as a concept, can be defined as *information that is relevant to assess the likelihood that a particular scientific idea is correct*.
 
-*Representation of the corresponding evidence is therefore key to evaluating hypotheses and assessing claims contained in scientific articles, databases or any other repository of scientific information.*
+==Representation of the corresponding evidence is therefore key to evaluating hypotheses and assessing claims contained in scientific articles, databases or any other repository of scientific information.====
 
 *Biomedical knowledge* is often highly *context-dependent* and *based on evidence obtained from the skilful combination and evaluation of individual results*, involving, among other aspects, a range of model organisms, diverse experimental and computational techniques, different forms of interpretation, and various inference schemes.
 
@@ -20,7 +20,7 @@ SEE identifies *four minimal components* for representing evidence. An expressiv
 
 Read more about the design principles for representing evidence and how these minimal components were identified.
 
-==Overview of the SEE approach==
+=Overview of the SEE approach==
 
 Based on the foregoing, the SEE approach for representing evidence consists of providing
 

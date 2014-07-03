@@ -12,7 +12,7 @@ Scientific evidence, as a concept, can be defined as *information that is releva
 Consequently, all those aspects - the *materials, methods and information sources used, the observations made, the reasoning employed and the context-specific assumptions made - are important for comprehensive evidence accounts*. Likewise, when data, often from disparate sources, is integrated to study complex biological systems an account of the evidence that was used to infer a model's properties and those of and among its components is critical for correct and transparent understanding of that model.
 
 ==Representing scientific evidence==
-SEE identifies *four minimal components* for representing evidence. An expressive account of evidence will require elements representing
+SEE represents evidence for a scientific claim in terms of the *argumentative structure of its supporting background* using *four minimal elements* for representing:
 
   # *scientific claims* and the *argumentative structure* used to justify them by other claims
   # the *subjects of the claims* i.e. of that _what_ is claimed with regard to a subject of inquiry

@@ -38,6 +38,6 @@ Knowing which agent made the claim is crucial for *evaluating independence and r
 
 We therefore identify as minimal components for modelling evidence elements representing
   # *scientific claims* and the *argumentative structure* used to justify them by other claims
-  # the *subjects of the claims* i.e. of that _what_ is claimed with regard to a subject of inquiry
+  # the *[Representation_of_Assertion_Subjects subjects of the claims]* i.e. of that _what_ is claimed with regard to a subject of inquiry
   # the *agents* making the claims and arguments
   # the *sources* in which claims were originally made e.g., the original scientific articles or database records.

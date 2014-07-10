@@ -1,0 +1,10 @@
+#summary Design pattern for representing the citing and adopting of scientific findings
+
+=SEE design pattern: Representing the citing and adopting of other's findings=
+
+Claims which reiterate previous findings are represented as assertions on the same subject made by the respective agents. The reiterating claim is represented as an {{{rdo:assertion}}} instance which is linked to the source assertions by _{{{rdo:is_directly_inferred_from}}}_ and linked to the same {{{rdo:proposition}}} instance as the source assertions by _{{{rdo:asserts}}}_. Each assertion can be linked to its corresponding agents and reports.
+
+http://semantic-evidence.googlecode.com/svn/wiki/images/figure-3-reiterating-assertion.png
+
+The fact that Meisters assertion (A1) reiterates what Tate & co-workers have asserted on the isolation of GS from rat liver (A2), is represented by a relation of the former to the latter via _{{{rdo:is_directly_inferred_from}}}_ and by sharing the same proposition instance via _{{{rdo:asserts}}}_. Each assertion is linked to its corresponding agents and reports.
+----

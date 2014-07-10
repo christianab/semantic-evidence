@@ -23,10 +23,10 @@ The connection between claims as representational primitives and their content r
 
 ==Core design patterns==
 With SEE one can coherently represent the entire evidence trail and how it is communicated. Its design patterns enable representation of
-  * individual scientific claims along with their subject and provenance
+  * [RDO_introduction#Example_for_the_core_model individual scientific claims along with their subject and provenance]
   * argumentative structures within and across publications
-  * attribution and consecutive layers of attribution (e.g., citing what others have asserted)
-  * the acceptance of what others have asserted (e.g., a curator evaluates a scientific article and enters some of the reported findings into a database)
+  * [Consecutive_Layers_Attribution attribution and consecutive layers of attribution] (e.g., citing what others have asserted)
+  * the [Citing_and_Adopting acceptance of what others have asserted] (e.g., a curator evaluates a scientific article and enters some of the reported findings into a database)
   * the drawing of own conclusions (e.g., alternative interpretations of published data)
 
 ==Applying SEE for evaluation of scientific findings==

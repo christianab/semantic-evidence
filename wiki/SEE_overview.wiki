@@ -1,15 +1,15 @@
 #summary Overview of the SEE approach.
 #labels Featured
 
-=Overview of the SEE approach=
+=SEE overview=
 
-SEE is designed for representation of the evidence that backs a scientific finding. For general background information on evidence and representation of evidence read [Evidence_and_Representation_of_Evidence here].
+SEE is designed for representation of the evidence that is provided to back up a scientific finding. For general background information on evidence read [Evidence_and_Representation_of_Evidence this].
 
-The SEE approach for representing evidence consists of providing
+In SEE the evidence for a scientific claim is represented in terms of the *argumentative structure of its supporting background* by providing
 
 (i) a formal representation of scientific claims, their provenance and the argumentative structure used to justify them by other claims
 
-(ii) a formal [Representation_of_Assertion_Subjects representation of claim content] and
+(ii) a formal [Representation_of_Assertion_Subjects representation of the subject of a claim] i.e., of that _what_ is claimed with regard to a subject of inquiry and
 
 (iii) a coherent integration of the two.
 
@@ -18,6 +18,8 @@ SEE relies on an abstract model for the representation of claims, provenance and
 Claim content e.g., _what_ is claimed regarding the properties of biological entities or the results and methods of an investigation is [Representation_of_Assertion_Subjects represented in RDF graphs] by using appropriately defined semantic web resources and design patterns which as a best practice should, if possible, be re-used from existing domain ontologies.
 
 The connection between claims as representational primitives and their content relies on [http://www.websemanticsjournal.org/index.php/ps/article/view/76 named RDF graphs] which enable pointing to collections of RDF-triples or OWL-axioms serialized as such.
+
+[SEE_Design_Principles Read more] about the underlying principles for representing evidence in SEE and how these elements were identified.
 
 ==Core design patterns==
 With SEE one can coherently represent the entire evidence trail and how it is communicated. Its design patterns enable representation of
@@ -28,7 +30,7 @@ With SEE one can coherently represent the entire evidence trail and how it is co
   * the drawing of own conclusions (e.g., alternative interpretations of published data)
 
 ==Applying SEE for evaluation of scientific findings==
-SEE-based accounts can be used to evaluate the evidence which is used to justify a scientific claim w.r.t
+SEE-based accounts can be used to evaluate the evidence which is used to justify a scientific claim w.r.t.
   * the observations and techniques used
   * the informations sources used and assumptions made
   * the sources through which the finding has been communicated

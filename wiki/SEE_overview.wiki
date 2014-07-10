@@ -20,12 +20,12 @@ Claim content e.g., _what_ is claimed regarding the properties of biological ent
 The connection between claims as representational primitives and their content relies on [http://www.websemanticsjournal.org/index.php/ps/article/view/76 named RDF graphs] which enable pointing to collections of RDF-triples or OWL-axioms serialized as such.
 
 ==Core design patterns==
-With SEE one can coherently represent
+With SEE one can coherently represent the entire evidence trail and how it is communicated. Its design patterns enable representation of
   * individual scientific claims along with their subject and provenance
   * argumentative structures within and across publications
-  * the citing or adopting of what other agents have claimed (e.g., when an author cites and uses a finding by others)
-  * consecutive layers of interpretation (e.g., a curator evaluates a scientific article and enters some of the reported findings into a database)
-  * appending own conclusions (e.g., alternative interpretations of published data)
+  * attribution and consecutive layers of attribution (e.g., citing what others have asserted)
+  * the acceptance of what others have asserted (e.g., a curator evaluates a scientific article and enters some of the reported findings into a database)
+  * the drawing of own conclusions (e.g., alternative interpretations of published data)
 
 ==Applying SEE for evaluation of scientific findings==
 SEE-based accounts can be used to evaluate the evidence which is used to justify a scientific claim w.r.t

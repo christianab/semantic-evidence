@@ -18,3 +18,33 @@ SEE relies on an abstract model for the representation of claims, provenance and
 Claim content e.g., _what_ is claimed regarding the properties of biological entities or the results and methods of an investigation is [Representation_of_Assertion_Subjects represented in RDF graphs] by using appropriately defined semantic web resources and design patterns which as a best practice should, if possible, be re-used from existing domain ontologies.
 
 The connection between claims as representational primitives and their content relies on [http://www.websemanticsjournal.org/index.php/ps/article/view/76 named RDF graphs] which enable pointing to collections of RDF-triples or OWL-axioms serialized as such.
+
+==Core design patterns==
+With SEE one can coherently represent
+  * individual scientific claims along with their subject and provenance
+  * argumentative structures within and across publications
+  * the citing or adopting of what other agents have claimed (e.g., when an author cites and uses a finding by others)
+  * consecutive layers of interpretation (e.g., a curator evaluates a scientific article and enters some of the reported findings into a database)
+  * appending own conclusions (e.g., alternative interpretations of published data)
+
+==Applying SEE for evaluation of scientific findings==
+SEE-based accounts can be used to evaluate the evidence which is used to justify a scientific claim w.r.t
+  * the observations and techniques used
+  * the informations sources used and assumptions made
+  * the sources through which the finding has been communicated
+  * the agents which have made the claim
+
+In addition, evidence-related information such as
+  * all assertions which are directly or indirectly used to infer a given assertion
+  * all assertions made in a given report
+  * all assertions made by a given agent
+  * all assertions on the same subject
+  * all agents making assertions on a given subject
+can easily be queried.
+
+==Use cases==
+Representations which use SEE or its underlying model could be productive in a variety of use cases requiring careful examination or recording of evidence, e.g.,
+  * providing supporting background information for biomedical knowledge bases,
+  * creating digital abstracts of research publications,
+  * adding a claim-level perspective on research publications which could be used by publishers, in bibliographic databases and in personal bibliography managers,
+  * providing open linked data which can be integrated on an informed basis using varying, application specific evidence criteria. 

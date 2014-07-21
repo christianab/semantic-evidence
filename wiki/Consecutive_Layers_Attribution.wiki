@@ -2,7 +2,7 @@
 
 =SEE design pattern: Representing consecutive layers of attribution=
 
-Consecutive layers of attribution occur *whenever a third party makes assertion on what another agent has asserted*.
+Consecutive layers of attribution occur *whenever a third party makes assertions on what another agent has asserted*.
 
 For example, when a curator evaluates a scientific article and reports on the author's assertions (without necessarily affirming them).
 
